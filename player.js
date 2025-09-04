@@ -137,6 +137,52 @@ const builtInChannels = [
   { name:"Animax", type:"dash", logo:"https://th.bing.com/th/id/OIP.39-tpYJk2UwoQjQc7Af_oAHaCi", manifestUri:"https://tglmp01.akamaized.net/out/v1/de55fad9216e4fe7ad8d2eed456ba1ec/manifest.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "edf1a715de9748638dd2fad75a419af2":"2f5a3199b26e9b693ae881af7ff864cf" } } },
   { name:"DreamWorks Tagalized", type:"dash", logo:"https://i.imgur.com/fh1Lg7b.png", manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_dreamworktag.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "564b3b1c781043c19242c66e348699c5":"d3ad27d7fe1f14fb1a2cd5688549fbab" } } },
   { name:"DreamWorks", type:"dash", logo:"https://i.imgur.com/fh1Lg7b.png", manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_dreamworks_hd1.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "4ab9645a2a0a47edbd65e8479c2b9669":"8cb209f1828431ce9b50b593d1f44079" } } },
+  { name:"Disney Channel", type:"hls", logo:"https://i.imgur.com/NVRbZfJ.png", manifestUri:"https://disney-channel.13l.link/live/Disney/index.m3u8" },
+{
+			name: 'CINEMO!',
+			manifestUri: 'https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-cinemo-dash-abscbnono/index.mpd',
+			licensekey: 'aa8aebe35ccc4541b7ce6292efcb1bfb:aab1df109d22fc5d7e3ec121ddf24e5f',
+		},
+{
+			name: 'TV5 HD',
+			manifestUri: 'https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_hd.mpd',
+			licensekey: '2615129ef2c846a9bbd43a641c7303ef:07c7f996b1734ea288641a68e1cfdc4d',
+		},
+{
+			name: 'A2Z',
+			manifestUri: 'https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_a2z.mpd',
+			licensekey: 'f703e4c8ec9041eeb5028ab4248fa094:c22f2162e176eee6273a5d0b68d19530',
+		},
+{
+			name: 'PTV 4',
+			manifestUri: 'https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_ptv4_sd.mpd',
+			licensekey: '71a130a851b9484bb47141c8966fb4a3:ad1f003b4f0b31b75ea4593844435600',
+		},
+{
+			name: 'NBA TV Philippines',
+			manifestUri: 'https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cgnl_nba.mpd',
+			licensekey: 'c5e51f41ceac48709d0bdcd9c13a4d88:20b91609967e472c27040716ef6a8b9a',
+		},
+				onesportshd: {
+			name: 'One Sports HD',
+			manifestUri: 'https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_onesports_hd.mpd',
+			licensekey: '53c3bf2eba574f639aa21f2d4409ff11:3de28411cf08a64ea935b9578f6d0edd',
+		},
+		pbarush: {
+			name: 'PBA Rush',
+			manifestUri: 'https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_pbarush_hd1.mpd',
+			licensekey: '76dc29dd87a244aeab9e8b7c5da1e5f3:95b2f2ffd4e14073620506213b62ac82',
+		},
+{
+			name: 'UAAP Varsity Channel',
+			manifestUri: 'https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/cg_uaap_cplay_sd.mpd',
+			licensekey: '95588338ee37423e99358a6d431324b9:6e0f50a12f36599a55073868f814e81e',
+		},
+{
+			name: 'Warner TV HD',
+			manifestUri: 'https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/cg_warnerhd.mpd',
+			licensekey: '4503cf86bca3494ab95a77ed913619a0:afc9c8f627fb3fb255dee8e3b0fe1d71',
+		},
 ];
 
 // ==========================
@@ -242,5 +288,6 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
