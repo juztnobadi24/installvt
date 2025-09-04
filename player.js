@@ -37,11 +37,55 @@ style.textContent = `
 html, body { margin:0; padding:0; width:100%; height:100%; background:black; font-family:Arial,sans-serif; overflow:hidden; touch-action:manipulation;}
 #playerContainer { position:relative; width:100vw; height:100vh; background:black; overflow:hidden; }
 #videoPlayer { position:absolute; top:50%; left:50%; width:100%; height:100%; object-fit:contain; transform:translate(-50%, -50%);}
-#overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:flex; justify-content:center; align-items:center; flex-direction:column; color:white; text-align:center; z-index:2000; cursor:pointer; }
-#overlayContent { display:flex; flex-direction:column; align-items:center; }
-#overlayText { font-size:22px; margin-bottom:20px; }
-#overlayLogo { max-width:200px; margin:20px 0; }
-#overlayHint { margin-top:20px; font-size:16px; opacity:0.8; }
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  z-index: 2000;
+  cursor: pointer;
+  padding: 3vh; /* scale padding with screen height */
+  box-sizing: border-box;
+}
+
+#overlayContent {
+margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  max-height: 100%;
+  justify-content: center;
+}
+
+#overlayText {
+  font-size: clamp(12px, 2vh, 24px); /* scales with screen height */
+  margin-bottom: 2vh;
+  line-height: 1.3;
+}
+
+#overlayLogo {
+  max-width: 80%;
+  max-height: 40vh; /* logo scales by height */
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+#overlayHint {
+  margin-top: 2vh;
+  font-size: clamp(10px, 1.5vh, 18px); /* scales with screen height */
+  opacity: 0.8;
+}
+
 
 #sidebar { position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%; background:rgba(20,20,20,0.95); overflow-y:auto; color:white; padding:0; box-shadow:2px 0 10px rgba(0,0,0,0.5); transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000; }
 #sidebar.open { transform:translateX(0); opacity:1; }
@@ -199,3 +243,4 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
