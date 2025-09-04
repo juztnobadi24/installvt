@@ -134,10 +134,9 @@ Promise.all([
 // Built-in Channels
 // ==========================
 const builtInChannels = [
-  { name:"Disney Channel", type:"hls", logo:"https://i.imgur.com/NVRbZfJ.png", manifestUri:"https://disney-channel.13l.link/live/Disney/index.m3u8" },
+  { name:"Animax", type:"dash", logo:"https://th.bing.com/th/id/OIP.39-tpYJk2UwoQjQc7Af_oAHaCi", manifestUri:"https://tglmp01.akamaized.net/out/v1/de55fad9216e4fe7ad8d2eed456ba1ec/manifest.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "edf1a715de9748638dd2fad75a419af2":"2f5a3199b26e9b693ae881af7ff864cf" } } },
   { name:"DreamWorks Tagalized", type:"dash", logo:"https://i.imgur.com/fh1Lg7b.png", manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_dreamworktag.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "564b3b1c781043c19242c66e348699c5":"d3ad27d7fe1f14fb1a2cd5688549fbab" } } },
   { name:"DreamWorks", type:"dash", logo:"https://i.imgur.com/fh1Lg7b.png", manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_dreamworks_hd1.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "4ab9645a2a0a47edbd65e8479c2b9669":"8cb209f1828431ce9b50b593d1f44079" } } },
-  { name:"Animax", type:"dash", logo:"https://th.bing.com/th/id/OIP.39-tpYJk2UwoQjQc7Af_oAHaCi", manifestUri:"https://tglmp01.akamaized.net/out/v1/de55fad9216e4fe7ad8d2eed456ba1ec/manifest.mpd", drm:{ type:"org.w3.clearkey", keyIds:{ "edf1a715de9748638dd2fad75a419af2":"2f5a3199b26e9b693ae881af7ff864cf" } } }
 ];
 
 // ==========================
@@ -243,4 +242,5 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
