@@ -152,6 +152,15 @@ const builtInChannels = [
     } 
   },
   { 
+  name:"CINEMA ONE", 
+  type:"dash", 
+  manifestUri:"https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-cinemaone-dash-abscbnono/index.mpd", 
+  drm:{ 
+    type:"org.w3.clearkey", 
+    keyIds:{ "58d0e56991194043b8fb82feb4db7276":"d68f41b59649676788889e19fb10d22c" } 
+  } 
+},
+  { 
     name:"NBA TV Philippines", 
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cgnl_nba.mpd", 
@@ -554,6 +563,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
