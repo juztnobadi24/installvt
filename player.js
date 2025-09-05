@@ -144,6 +144,192 @@ const builtInChannels = [
     } 
   },
   { 
+    name:"AXN", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_axn_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "fd5d928f5d974ca4983f6e9295dfe410":"3aaa001ddc142fedbb9d5557be43792f" } }
+  },
+  { 
+    name:"Lifetime SD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_lifetime.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "cf861d26e7834166807c324d57df5119":"64a81e30f6e5b7547e3516bbf8c647d0" } }
+  },
+  { 
+    name:"HBO HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbohd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "d47ebabf7a21430b83a8c4b82d9ef6b1":"54c213b2b5f885f1e0290ee4131d425b" } }
+  },
+  { 
+    name:"HITS Movies", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_hitsmovies.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "f56b57b32d7e4b2cb21748c0b56761a7":"3df06a89aa01b32655a77d93e09e266f" } }
+  },
+  { 
+    name:"Rock Action", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_rockextreme.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "0f852fb8412b11edb8780242ac120002":"4cbc004d8c444f9f996db42059ce8178" } }
+  },
+  { 
+    name:"Tap Action Flix HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_tapactionflix_hd1.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "bee1066160c0424696d9bf99ca0645e3":"f5b72bf3b89b9848de5616f37de040b7" } }
+  },
+  { 
+    name:"HBO Family HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbofam.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "872910c843294319800d85f9a0940607":"f79fd895b79c590708cf5e8b5c6263be" } }
+  },
+  { 
+    name:"Cinemax HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_cinemax.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "b207c44332844523a3a3b0469e5652d7":"fe71aea346db08f8c6fbf0592209f955" } }
+  },
+  { 
+    name:"HBO Signature HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_hbosign.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "a06ca6c275744151895762e0346380f5":"559da1b63eec77b5a942018f14d3f56f" } }
+  },
+  { 
+    name:"HBO Hits HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-09-prod.akamaized.net/out/u/cg_hbohits.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "b04ae8017b5b4601a5a0c9060f6d5b7d":"a8795f3bdb8a4778b7e888ee484cc7a1" } }
+  },
+  { 
+    name:"CNN HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_cnnhd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "900c43f0e02742dd854148b7a75abbec":"da315cca7f2902b4de23199718ed7e90" } }
+  },
+  { 
+    name:"One PH", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/oneph_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "92834ab4a7e1499b90886c5d49220e46":"a7108d9a6cfcc1b7939eb111daf09ab3" } }
+  },
+  { 
+    name:"One News", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/onenews_hd1.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "d39eb201ae494a0b98583df4d110e8dd":"6797066880d344422abd3f5eda41f45f" } }
+  },
+  { 
+    name:"Nickelodeon SD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_nickelodeon.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "9ce58f37576b416381b6514a809bfd8b":"f0fbb758cdeeaddfa3eae538856b4d72" } }
+  },
+  { 
+    name:"DepEd TV", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/depedch_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "0f853706412b11edb8780242ac120002":"2157d6529d80a760f60a8b5350dbc4df" } }
+  },
+  { 
+    name:"Animal Planet", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_animal_planet_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "436b69f987924fcbbc06d40a69c2799a":"c63d5b0d7e52335b61aeba4f6537d54d" } }
+  },
+  { 
+    name:"BBC Earth HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_bbcearth_hd1.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "34ce95b60c424e169619816c5181aded":"0e2a2117d705613542618f58bf26fc8e" } }
+  },
+  { 
+    name:"Discovery Channel SD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_discovery.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "d9ac48f5131641a789328257e778ad3a":"b6e67c37239901980c6e37e0607ceee6" } }
+  },
+  { 
+    name:"Asian Food Network", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/asianfoodnetwork_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "1619db30b9ed42019abb760a0a3b5e7f":"5921e47fb290ae263291b851c0b4b6e4" } }
+  },
+  { 
+    name:"Cartoon Network HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_cartoonnetworkhd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "a2d1f552ff9541558b3296b5a932136b":"cdd48fa884dc0c3a3f85aeebca13d444" } }
+  },
+  { 
+    name:"Nick JR", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_nickjr.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "bab5c11178b646749fbae87962bf5113":"0ac679aad3b9d619ac39ad634ec76bc8" } }
+  },
+  { 
+    name:"Kix HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/kix_hd1.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "a8d5712967cd495ca80fdc425bc61d6b":"f248c29525ed4c40cc39baeee9634735" } }
+  },
+  { 
+    name:"Thrill SD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_thrill_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "928114ffb2394d14b5585258f70ed183":"a82edc340bc73447bac16cdfed0a4c62" } }
+  },
+  { 
+    name:"Pinoy Box Office (PBO)", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/pbo_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "dcbdaaa6662d4188bdf97f9f0ca5e830":"31e752b441bd2972f2b98a4b1bc1c7a1" } }
+  },
+  { 
+    name:"Viva Cinema", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/viva_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "07aa813bf2c147748046edd930f7736e":"3bd6688b8b44e96201e753224adfc8fb" } }
+  },
+  { 
+    name:"Tagalog Movie Channel (TMC)", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_tagalogmovie.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "96701d297d1241e492d41c397631d857":"ca2931211c1a261f082a3a2c4fd9f91b" } }
+  },
+  { 
+    name:"SPOTV HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/cg_spotvhd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "ec7ee27d83764e4b845c48cca31c8eef":"9c0e4191203fccb0fde34ee29999129e" } }
+  },
+  { 
+    name:"SPOTV 2 HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_spotv2hd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "7eea72d6075245a99ee3255603d58853":"6848ef60575579bf4d415db1032153ed" } }
+  },
+  { 
+    name:"TV Maria", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/tvmaria_prd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "fa3998b9a4de40659725ebc5151250d6":"998f1294b122bbf1a96c1ddc0cbb229f" } }
+  },
+  { 
+    name:"Lotus Macau", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/lotusmacau_prd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "60dc692e64ea443a8fb5ac186c865a9b":"01bdbe22d59b2a4504b53adc2f606cc1" } }
+  },
+  { 
+    name:"Premier Sports HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_ps_hd1.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "b8b595299fdf41c1a3481fddeb0b55e4":"cd2b4ad0eb286239a4a022e6ca5fd007" } }
+  },
+  { 
     name:"DreamWorks Tagalized", 
     type:"dash", 
     logo:"https://i.imgur.com/fh1Lg7b.png", 
@@ -359,6 +545,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
