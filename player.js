@@ -134,6 +134,69 @@ Promise.all([
 // ==========================
 const builtInChannels = [
   { 
+  name:"KAPAMILYA CHANNEL", 
+  type:"dash", 
+  manifestUri:"https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-kapcha-dash-abscbnono/index.mpd", 
+  drm:{ 
+    type:"org.w3.clearkey", 
+    keyIds:{ "bd17afb5dc9648a39be79ee3634dd4b8":"3ecf305d54a7729299b93a3d69c02ea5" } 
+  } 
+},
+  { 
+    name:"PTV 4", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_ptv4_sd.mpd", 
+    drm:{ 
+      type:"org.w3.clearkey", 
+      keyIds:{ "71a130a851b9484bb47141c8966fb4a3":"ad1f003b4f0b31b75ea4593844435600" } 
+    } 
+  },
+  { 
+    name:"NBA TV Philippines", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cgnl_nba.mpd", 
+    drm:{ 
+      type:"org.w3.clearkey", 
+      keyIds:{ "c5e51f41ceac48709d0bdcd9c13a4d88":"20b91609967e472c27040716ef6a8b9a" } 
+    } 
+  }, 
+  { 
+    name:"TV5 HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_hd.mpd", 
+    drm:{ 
+      type:"org.w3.clearkey", 
+      keyIds:{ "2615129ef2c846a9bbd43a641c7303ef":"07c7f996b1734ea288641a68e1cfdc4d" } 
+    } 
+  },
+  { 
+    name:"CINEMO!", 
+    type:"dash", 
+    manifestUri:"https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-cinemo-dash-abscbnono/index.mpd", 
+    drm:{ 
+      type:"org.w3.clearkey", 
+      keyIds:{ "aa8aebe35ccc4541b7ce6292efcb1bfb":"aab1df109d22fc5d7e3ec121ddf24e5f" } 
+    } 
+  },
+  { 
+    name:"Pinoy Box Office (PBO)", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/pbo_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "dcbdaaa6662d4188bdf97f9f0ca5e830":"31e752b441bd2972f2b98a4b1bc1c7a1" } }
+  },
+  { 
+    name:"Viva Cinema", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/viva_sd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "07aa813bf2c147748046edd930f7736e":"3bd6688b8b44e96201e753224adfc8fb" } }
+  },
+  { 
+    name:"Tagalog Movie Channel (TMC)", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_tagalogmovie.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "96701d297d1241e492d41c397631d857":"ca2931211c1a261f082a3a2c4fd9f91b" } }
+  },
+  { 
     name:"Animax", 
     type:"dash", 
     logo:"https://th.bing.com/th/id/OIP.39-tpYJk2UwoQjQc7Af_oAHaCi", 
@@ -282,24 +345,6 @@ const builtInChannels = [
     drm:{ type:"org.w3.clearkey", keyIds:{ "928114ffb2394d14b5585258f70ed183":"a82edc340bc73447bac16cdfed0a4c62" } }
   },
   { 
-    name:"Pinoy Box Office (PBO)", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/pbo_sd.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "dcbdaaa6662d4188bdf97f9f0ca5e830":"31e752b441bd2972f2b98a4b1bc1c7a1" } }
-  },
-  { 
-    name:"Viva Cinema", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/viva_sd.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "07aa813bf2c147748046edd930f7736e":"3bd6688b8b44e96201e753224adfc8fb" } }
-  },
-  { 
-    name:"Tagalog Movie Channel (TMC)", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_tagalogmovie.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "96701d297d1241e492d41c397631d857":"ca2931211c1a261f082a3a2c4fd9f91b" } }
-  },
-  { 
     name:"SPOTV HD", 
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/cg_spotvhd.mpd", 
@@ -360,48 +405,12 @@ const builtInChannels = [
     manifestUri:"https://disney-channel.13l.link/live/Disney/index.m3u8" 
   },
   { 
-    name:"CINEMO!", 
-    type:"dash", 
-    manifestUri:"https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-cinemo-dash-abscbnono/index.mpd", 
-    drm:{ 
-      type:"org.w3.clearkey", 
-      keyIds:{ "aa8aebe35ccc4541b7ce6292efcb1bfb":"aab1df109d22fc5d7e3ec121ddf24e5f" } 
-    } 
-  },
-  { 
-    name:"TV5 HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_hd.mpd", 
-    drm:{ 
-      type:"org.w3.clearkey", 
-      keyIds:{ "2615129ef2c846a9bbd43a641c7303ef":"07c7f996b1734ea288641a68e1cfdc4d" } 
-    } 
-  },
-  { 
     name:"A2Z", 
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_a2z.mpd", 
     drm:{ 
       type:"org.w3.clearkey", 
       keyIds:{ "f703e4c8ec9041eeb5028ab4248fa094":"c22f2162e176eee6273a5d0b68d19530" } 
-    } 
-  },
-  { 
-    name:"PTV 4", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cg_ptv4_sd.mpd", 
-    drm:{ 
-      type:"org.w3.clearkey", 
-      keyIds:{ "71a130a851b9484bb47141c8966fb4a3":"ad1f003b4f0b31b75ea4593844435600" } 
-    } 
-  },
-  { 
-    name:"NBA TV Philippines", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/cgnl_nba.mpd", 
-    drm:{ 
-      type:"org.w3.clearkey", 
-      keyIds:{ "c5e51f41ceac48709d0bdcd9c13a4d88":"20b91609967e472c27040716ef6a8b9a" } 
     } 
   },
   { 
@@ -545,6 +554,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
