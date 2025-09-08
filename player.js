@@ -20,20 +20,11 @@ document.body.innerHTML = `
       <button id="favoritesToggle">⭐ Favorites</button>
     </div>
     <ul id="channelList"></ul>
-     <div id="sidebarFooter">
-      <button id="supportBtn">💙 Support thru GCash</button>
-    </div>
   </div>
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
     <div id="loadingText">0%</div>
-  </div>
-  <div id="supportModal">
-    <div id="supportContent">
-      <img src="Gcash.jpg" alt="GCash QR/Logo">
-      <div id="supportNumber">09776192184</div>
-    </div>
   </div>
 </div>
 `;
@@ -99,37 +90,12 @@ margin-bottom: 5vh;
 #sidebar { position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%; background:rgba(20,20,20,0.95); overflow-y:auto; color:white; padding:0; box-shadow:2px 0 10px rgba(0,0,0,0.5); transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000; }
 #sidebar.open { transform:translateX(0); opacity:1; }
 
-#sidebarHeader  {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: rgba(20,20,20,0.95);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-}
+#sidebarHeader { display: flex; flex-direction: column; gap: 10px; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
 #searchInput, #favoritesToggle { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
 #searchInput { border: none; background: White; color: #111; }
 #searchInput::placeholder { color: #aaa; }
 #favoritesToggle { background: #444; color: white; border: none; cursor: pointer; text-align: left; }
 #favoritesToggle.active { background:#28a745; }
-
-
-#sidebarFooter {
-  margin-top: auto;
-  padding: 10px;
-  background: rgba(20,20,20,0.95);
-}
-#supportBtn {
-  background: #0066cc;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
 
 #channelList { list-style:none; padding:0; margin:0; }
 #channelList li { display:flex; justify-content:space-between; align-items:center; padding:12px 10px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.1); }
@@ -145,34 +111,6 @@ body.hide-cursor { cursor:none; }
 .spinner { border:6px solid rgba(255,255,255,0.2); border-top:6px solid #fff; border-radius:50%; width:80px; height:80px; animation:spin 1s linear infinite; }
 #loadingText { position:absolute; font-size:16px; font-weight:bold; color:white; pointer-events:none; }
 @keyframes spin { 100% { transform:rotate(360deg);} }
-
-#supportModal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
-}
-#supportContent {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-  max-width: 90%;
-}
-#supportContent img {
-  max-width: 250px;
-  width: 80%;
-  margin-bottom: 15px;
-}
-#supportNumber {
-  font-size: 20px;
-  font-weight: bold;
-}
 `;
 document.head.appendChild(style);
 
@@ -625,8 +563,6 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
-
-
 
 
 
