@@ -90,7 +90,18 @@ margin-bottom: 5vh;
 #sidebar { position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%; background:rgba(20,20,20,0.95); overflow-y:auto; color:white; padding:0; box-shadow:2px 0 10px rgba(0,0,0,0.5); transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000; }
 #sidebar.open { transform:translateX(0); opacity:1; }
 
-#sidebarHeader { display: flex; flex-direction: column; gap: 10px; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+#sidebarHeader  {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(20,20,20,0.95);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
 #searchInput, #favoritesToggle { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
 #searchInput { border: none; background: White; color: #111; }
 #searchInput::placeholder { color: #aaa; }
@@ -563,6 +574,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
