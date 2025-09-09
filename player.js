@@ -42,8 +42,8 @@ document.body.innerHTML = `
   z-index: 1000;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   background: rgba(0,0,0,0.8); /* Semi-transparent background */
   justify-content: center;
   align-items: center;
@@ -591,6 +591,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
