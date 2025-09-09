@@ -35,35 +35,37 @@ document.body.innerHTML = `
 </div>
 
 <style>
-/* Fullscreen overlay */
+/* Fullscreen dark background */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
-  width: 80%;
-  height: 80%;
-  background: rgba(0,0,0,0.8); /* Semi-transparent background */
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8); /* Semi-transparent overlay */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Centered modal content */
+/* Modal content takes 80% of screen */
 .modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  max-width: 90%;
-  max-height: 90%;
+  width: 80%;
+  height: 80%;
   text-align: center;
   overflow: auto;
+  box-sizing: border-box;
 }
 
-/* Fit image inside screen */
+/* Image fits inside modal */
 .modal-content img {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 70%;
   height: auto;
   border-radius: 10px;
 }
@@ -591,6 +593,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
