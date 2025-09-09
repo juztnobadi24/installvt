@@ -183,6 +183,9 @@ body.hide-cursor { cursor:none; }
   justify-content: center;
   align-items: center;
 }
+.modal.show {
+  display: flex !important;
+}
 .modalContent {
   background: #222;
   color: white;
@@ -230,25 +233,17 @@ function initPlayer(){
   const searchInput=document.getElementById("searchInput");
   const favoritesToggle=document.getElementById("favoritesToggle");
 
-  // ✅ Grab modal elements inside initPlayer
+  // ✅ Modal controls
   const supportBtn=document.getElementById("supportBtn");
   const supportModal=document.getElementById("supportModal");
   const modalClose=document.getElementById("modalClose");
 
-  // ✅ Attach events properly
-  supportBtn.addEventListener("click", ()=> {
-    supportModal.style.display="flex";
-  });
-  modalClose.addEventListener("click", ()=> {
-    supportModal.style.display="none";
-  });
-  window.addEventListener("click", (e)=> {
-    if(e.target===supportModal) supportModal.style.display="none";
-  });
+  supportBtn.addEventListener("click", ()=> supportModal.classList.add("show"));
+  modalClose.addEventListener("click", ()=> supportModal.classList.remove("show"));
+  window.addEventListener("click", (e)=> { if(e.target===supportModal) supportModal.classList.remove("show"); });
 
-  // ... rest of your IPTV player logic ...
-
-  
+  // (your channel/favorites/search logic continues here...)
+}
 
 // ==========================
 // Built-in Channels
@@ -684,6 +679,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
