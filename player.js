@@ -73,17 +73,21 @@ document.body.innerHTML = `
 </style>
 
 <script>
-document.getElementById("gcashNumber").addEventListener("click", function() {
+const gcashNumber = document.getElementById("gcashNumber");
+const copyMsg = document.getElementById("copyMsg");
+
+gcashNumber.addEventListener("click", function(event) {
+  event.stopPropagation(); // prevent modal from closing
   const number = this.innerText.trim();
   navigator.clipboard.writeText(number).then(() => {
-    const msg = document.getElementById("copyMsg");
-    msg.style.display = "block";
-    setTimeout(() => msg.style.display = "none", 2000);
+    copyMsg.style.display = "block";
+    setTimeout(() => copyMsg.style.display = "none", 2000);
   }).catch(err => {
     console.error("Clipboard copy failed:", err);
   });
 });
 </script>
+
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
@@ -607,6 +611,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
