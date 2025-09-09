@@ -25,36 +25,35 @@ document.body.innerHTML = `
     </div>
   </div>
 
+<button id="openModalBtn">Open GCash Modal (test)</button>
+
 <!-- GCash Modal -->
-<div id="gcashModal" class="modal">
-  <div class="modal-content" id="gcashContent">
+<div id="gcashModal" class="modal" aria-hidden="true">
+  <div class="modal-content" id="gcashContent" role="dialog" aria-modal="true">
     <h2>Support thru GCash</h2>
     <p>
-      Scan or send to: 
-      <b id="gcashNumber" style="cursor:pointer; color:#007bff;" title="Click to copy">
-        09776192184
-      </b>
+      Scan or send to:
+      <b id="gcashNumber" class="gcash-number" title="Click to copy">097176192184</b>
     </p>
-    <img src="gcash-placeholder.png" alt="GCash QR">
-    <p id="copyMsg" style="font-size:12px; color:green; display:none; margin-top:8px;">
-      Number copied! ✅
-    </p>
+    <img src="gcash-placeholder.png" alt="GCash QR" style="max-width:80%; border-radius:8px;">
+    <p id="copyMsg" class="copy-msg" aria-live="polite" style="display:none; margin-top:8px;">Number copied! ✅</p>
+    <div style="margin-top:10px;">
+      <button id="closeBtn">Close</button>
+    </div>
   </div>
 </div>
 
 <style>
 .modal {
-  display: none;
+  display: none; /* set to flex when opened */
   position: fixed;
   z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; right:0; bottom:0;
   background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
 }
+.modal[aria-hidden="false"] { display:flex; }
 .modal-content {
   background: #fff;
   padding: 20px;
@@ -64,42 +63,105 @@ document.body.innerHTML = `
   text-align: center;
   overflow: auto;
 }
-.modal-content img {
-  max-width: 80%;
-  max-height: 50vh;
-  height: auto;
-  border-radius: 10px;
-}
+.gcash-number { cursor:pointer; color:#007bff; user-select: text; }
+.copy-msg { font-size: 13px; color: green; }
 </style>
 
 <script>
-const gcashModal   = document.getElementById("gcashModal");
-const gcashContent = document.getElementById("gcashContent");
-const gcashNumber  = document.getElementById("gcashNumber");
-const copyMsg      = document.getElementById("copyMsg");
+const openBtn = document.getElementById('openModalBtn');
+const gcashModal = document.getElementById('gcashModal');
+const gcashContent = document.getElementById('gcashContent');
+const gcashNumber = document.getElementById('gcashNumber');
+const copyMsg = document.getElementById('copyMsg');
+const closeBtn = document.getElementById('closeBtn');
 
-// Close modal when clicking outside content
-gcashModal.addEventListener("click", function(e) {
-  if (e.target === gcashModal) {
-    gcashModal.style.display = "none";
+openBtn.addEventListener('click', () => {
+  gcashModal.setAttribute('aria-hidden','false');
+});
+closeBtn.addEventListener('click', () => {
+  gcashModal.setAttribute('aria-hidden','true');
+});
+
+// Close by clicking the overlay (only when target === overlay)
+gcashModal.addEventListener('click', (e) => {
+  if (e.target === gcashModal) gcashModal.setAttribute('aria-hidden','true');
+});
+
+/**
+ * show temporary copied message
+ */
+function showCopied() {
+  copyMsg.style.display = 'block';
+  setTimeout(() => copyMsg.style.display = 'none', 1800);
+}
+
+/**
+ * Synchronous copy (execCommand) fallback
+ * returns true if execCommand succeeded
+ */
+function tryExecCommandCopy(text) {
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    // avoid scrolling to bottom
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.style.top = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (err) {
+    return false;
   }
-});
+}
 
-// Prevent clicks inside modal content from closing
-gcashContent.addEventListener("click", function(e) {
-  e.stopPropagation();
-});
+/**
+ * Robust copy handler — synchronous fallback first, then Clipboard API
+ */
+function robustCopy(text) {
+  // try synchronous execCommand first (ensures immediate copy)
+  const syncOk = tryExecCommandCopy(text);
+  if (syncOk) {
+    showCopied();
+    // also attempt async clipboard API silently
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(()=>{/* ignore */});
+    }
+    return;
+  }
 
-// Copy number when clicked
-gcashNumber.addEventListener("click", function(e) {
-  e.stopPropagation(); // extra safety
-  const number = this.innerText.trim();
-  navigator.clipboard.writeText(number).then(() => {
-    copyMsg.style.display = "block";
-    setTimeout(() => copyMsg.style.display = "none", 2000);
-  }).catch(err => {
-    alert("Failed to copy: " + err);
-  });
+  // fallback to async Clipboard API if available
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showCopied();
+    }).catch(err => {
+      console.error('Clipboard API failed:', err);
+      alert('Could not copy automatically. Please select and copy the number manually.');
+    });
+    return;
+  }
+
+  // last resort
+  alert('Copy is not supported in this browser. Please select the number and copy it manually.');
+}
+
+/**
+ * Attach handlers to prevent propagation early (pointerdown/touchstart/mousedown/click)
+ * passive:false allows preventDefault on touchstart/pointerdown
+ */
+['pointerdown','mousedown','touchstart','click'].forEach(evtName => {
+  gcashNumber.addEventListener(evtName, function(e) {
+    // stop modal-close handlers from seeing this event
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+
+    const num = this.textContent.trim();
+    robustCopy(num);
+  }, { passive: false });
 });
 </script>
 
@@ -626,6 +688,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
