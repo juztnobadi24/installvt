@@ -37,27 +37,24 @@ document.body.innerHTML = `
     </p>
     <img src="gcash-placeholder.png" alt="GCash QR">
     <p id="copyMsg" style="font-size:12px; color:green; display:none; margin-top:8px;">
-      Number copied!
+      Number copied! ✅
     </p>
   </div>
 </div>
 
 <style>
-/* Fullscreen overlay */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8); /* Semi-transparent background */
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
 }
-
-/* Centered modal content */
 .modal-content {
   background: #fff;
   padding: 20px;
@@ -67,8 +64,6 @@ document.body.innerHTML = `
   text-align: center;
   overflow: auto;
 }
-
-/* Fit image inside screen */
 .modal-content img {
   max-width: 80%;
   max-height: 50vh;
@@ -79,11 +74,13 @@ document.body.innerHTML = `
 
 <script>
 document.getElementById("gcashNumber").addEventListener("click", function() {
-  const number = this.innerText;
+  const number = this.innerText.trim();
   navigator.clipboard.writeText(number).then(() => {
     const msg = document.getElementById("copyMsg");
     msg.style.display = "block";
     setTimeout(() => msg.style.display = "none", 2000);
+  }).catch(err => {
+    console.error("Clipboard copy failed:", err);
   });
 });
 </script>
@@ -610,6 +607,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
