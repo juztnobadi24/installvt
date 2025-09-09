@@ -230,16 +230,23 @@ function initPlayer(){
   const searchInput=document.getElementById("searchInput");
   const favoritesToggle=document.getElementById("favoritesToggle");
 
-  // 🔥 Support modal controls
+  // ✅ Grab modal elements inside initPlayer
   const supportBtn=document.getElementById("supportBtn");
   const supportModal=document.getElementById("supportModal");
   const modalClose=document.getElementById("modalClose");
 
-  supportBtn.onclick=()=> supportModal.style.display="flex";
-  modalClose.onclick=()=> supportModal.style.display="none";
-  window.onclick=(e)=>{ if(e.target===supportModal) supportModal.style.display="none"; };
+  // ✅ Attach events properly
+  supportBtn.addEventListener("click", ()=> {
+    supportModal.style.display="flex";
+  });
+  modalClose.addEventListener("click", ()=> {
+    supportModal.style.display="none";
+  });
+  window.addEventListener("click", (e)=> {
+    if(e.target===supportModal) supportModal.style.display="none";
+  });
 
-  // (rest of your existing initPlayer logic stays unchanged...)
+  // ... rest of your IPTV player logic ...
 }
 
 // ==========================
@@ -676,6 +683,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
