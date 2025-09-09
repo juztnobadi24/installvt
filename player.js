@@ -247,7 +247,8 @@ function initPlayer(){
   });
 
   // ... rest of your IPTV player logic ...
-}
+
+  
 
 // ==========================
 // Built-in Channels
@@ -683,6 +684,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
