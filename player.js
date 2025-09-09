@@ -586,7 +586,7 @@ const builtInChannels = [
     } 
   }
 ];
-}
+
 // ==========================
 // Player Logic (with smart retry, 1s timeout)
 // ==========================
@@ -689,6 +689,7 @@ function initPlayer(){
   video.addEventListener("pause",()=>{ if(document.fullscreenElement) video.play(); });
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
+}
 }
 
 
