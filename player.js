@@ -25,14 +25,49 @@ document.body.innerHTML = `
     </div>
   </div>
 
-  <!-- GCash Modal -->
-  <div id="gcashModal" class="modal">
-    <div class="modal-content">
-      <h2>Support thru GCash</h2>
-      <p>Scan or send to: <b>09776192184</b></p>
-      <img src="gcash-placeholder.png" alt="GCash QR" style="max-width:80%; border-radius:10px;">
-    </div>
+<!-- GCash Modal -->
+<div id="gcashModal" class="modal">
+  <div class="modal-content">
+    <h2>Support thru GCash</h2>
+    <p>Scan or send to: <b>09776192184</b></p>
+    <img src="gcash-placeholder.png" alt="GCash QR">
   </div>
+</div>
+
+<style>
+/* Fullscreen overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered modal content */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  overflow: auto;
+}
+
+/* Fit image inside screen */
+.modal-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  border-radius: 10px;
+}
+</style>
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
@@ -556,5 +591,6 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
