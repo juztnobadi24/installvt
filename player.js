@@ -166,41 +166,20 @@ const builtInChannels = [
 },
 
  { 
-    name: "Disney Channel (576p)", 
+    name: "Anime Zone TV (480p)", 
     type: "hls", 
-    manifestUri: "https://viamotionhsi.netplus.ch/live/eds/disneychannelde/browser-HLS8/disneychannelde.m3u8" 
+    manifestUri: "http://animezonetv.net/hls/stream.m3u8" 
   },
   { 
-    name: "Disney Channel (576p) [Not 24/7]", 
+    name: "Anixe + (360p)", 
     type: "hls", 
-    manifestUri: "http://116.90.120.149:8000/play/a0bx/index.m3u8" 
+    manifestUri: "https://ma.anixa.tv/clips/stream/anixesd/index.m3u8" 
   },
   { 
-    name: "Disney Channel East", 
+    name: "Anixe HD Serie (360p)", 
     type: "hls", 
-    manifestUri: "https://fl5.moveonjoy.com/DISNEY/index.m3u8" 
+    manifestUri: "https://ma.anixa.tv/clips/stream/anixehd/index.m3u8" 
   },
-  { 
-    name: "Disney Jr. (1080p) [Geo-blocked]", 
-    type: "hls", 
-    manifestUri: "https://saran-live.ercdn.net/disneyjunior/index.m3u8" 
-  },
-  { 
-    name: "Disney Junior (576p)", 
-    type: "hls", 
-    manifestUri: "http://116.90.120.149:8000/play/a0b3/index.m3u8" 
-  },
-  { 
-    name: "Disney Junior East", 
-    type: "hls", 
-    manifestUri: "https://fl3.moveonjoy.com/DISNEY_JR/index.m3u8" 
-  },
-  { 
-    name: "Disney XD (720p)", 
-    type: "hls", 
-    manifestUri: "http://fl3.moveonjoy.com/DISNEY_XD/index.m3u8" 
-  },
-
   
   { 
     name:"PTV 4", 
@@ -629,5 +608,6 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
