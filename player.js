@@ -165,41 +165,42 @@ const builtInChannels = [
   } 
 },
 
- {
-    name: "Disney Eastern Feed SD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/DisneyChannelEast/sd"
+ { 
+    name: "Disney Channel (576p)", 
+    type: "hls", 
+    manifestUri: "https://viamotionhsi.netplus.ch/live/eds/disneychannelde/browser-HLS8/disneychannelde.m3u8" 
   },
-  {
-    name: "Disney Eastern Feed HD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/DisneyChannelEast/hd"
+  { 
+    name: "Disney Channel (576p) [Not 24/7]", 
+    type: "hls", 
+    manifestUri: "http://116.90.120.149:8000/play/a0bx/index.m3u8" 
   },
-  {
-    name: "Disney Junior USA East SD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/DisneyJuniorEast/sd"
+  { 
+    name: "Disney Channel East", 
+    type: "hls", 
+    manifestUri: "https://fl5.moveonjoy.com/DISNEY/index.m3u8" 
   },
-  {
-    name: "Disney Junior USA East HD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/DisneyJuniorEast/hd"
+  { 
+    name: "Disney Jr. (1080p) [Geo-blocked]", 
+    type: "hls", 
+    manifestUri: "https://saran-live.ercdn.net/disneyjunior/index.m3u8" 
   },
-  {
-    name: "Disney XD USA Eastern Feed SD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/DisneyXDEast/sd"
+  { 
+    name: "Disney Junior (576p)", 
+    type: "hls", 
+    manifestUri: "http://116.90.120.149:8000/play/a0b3/index.m3u8" 
   },
-  {
-    name: "Disney XD USA Eastern Feed HD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/DisneyXDEast/hd"
+  { 
+    name: "Disney Junior East", 
+    type: "hls", 
+    manifestUri: "https://fl3.moveonjoy.com/DISNEY_JR/index.m3u8" 
   },
-  {
-    name: "E! Entertainment USA Eastern Feed SD",
-    type: "hls",
-    manifestUri: "https://tvpass.org/live/EEast/sd"
+  { 
+    name: "Disney XD (720p)", 
+    type: "hls", 
+    manifestUri: "http://fl3.moveonjoy.com/DISNEY_XD/index.m3u8" 
   },
+
   
   { 
     name:"PTV 4", 
@@ -628,4 +629,5 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
