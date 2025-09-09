@@ -21,7 +21,7 @@ document.body.innerHTML = `
     </div>
     <ul id="channelList"></ul>
     <div id="sidebarFooter">
-      <button id="supportBtn">Support Me thru GCash</button>
+      <button id="supportBtn">💙 Support thru GCash</button>
     </div>
   </div>
 
@@ -57,19 +57,7 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 }
 #overlayContent { margin-bottom: 5vh; display: flex; flex-direction: column; align-items: center; max-width: 90%; max-height: 100%; justify-content: center; }
 #overlayText { font-size: clamp(12px, 2vh, 24px); margin-bottom: 2vh; line-height: 1.3; }
-#overlayLogo {
-  position: absolute;       /* overlay it */
-  top: 10px;                /* adjust vertical position */
-  left: 10px;               /* adjust horizontal position */
-  max-width: 80%;           /* responsive scaling */
-  max-height: 40vh;         /* responsive scaling */
-  width: auto;              /* keep aspect ratio */
-  height: auto;             /* keep aspect ratio */
-  margin: 0;                /* remove centering */
-  object-fit: contain;      /* prevent stretching */
-  z-index: 1000;            /* keep it on top */
-  pointer-events: none;     /* don't block clicks */
-}
+#overlayLogo { max-width: 80%; max-height: 40vh; width: auto; height: auto; margin: 0 auto; }
 #overlayHint { margin-top: 2vh; font-size: clamp(10px, 1.5vh, 18px); opacity: 0.8; }
 
 #sidebar {
@@ -568,7 +556,5 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
-
-
 
 
