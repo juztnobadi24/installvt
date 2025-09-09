@@ -55,7 +55,7 @@ document.body.innerHTML = `
   padding: 20px;
   border-radius: 12px;
   max-width: 80%;
-  max-height: 80%;
+  max-height: 70%;
   text-align: center;
   overflow: auto;
 }
@@ -591,6 +591,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
