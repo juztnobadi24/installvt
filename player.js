@@ -20,6 +20,19 @@ document.body.innerHTML = `
       <button id="favoritesToggle">⭐ Favorites</button>
     </div>
     <ul id="channelList"></ul>
+    <div id="sidebarFooter">
+      <button id="supportBtn">💙 Support thru GCash</button>
+    </div>
+  </div>
+
+  <!-- GCash Modal -->
+  <div id="gcashModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Support thru GCash</h2>
+      <p>Scan or send to: <b>09776192184</b></p>
+      <img src="gcash-placeholder.png" alt="GCash QR" style="max-width:80%; border-radius:10px;">
+    </div>
   </div>
 
   <div id="loadingSpinner">
@@ -38,71 +51,46 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 #playerContainer { position:relative; width:100vw; height:100vh; background:black; overflow:hidden; }
 #videoPlayer { position:absolute; top:50%; left:50%; width:100%; height:100%; object-fit:contain; transform:translate(-50%, -50%);}
 #overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  text-align: center;
-  z-index: 2000;
-  cursor: pointer;
-  padding: 3vh; /* scale padding with screen height */
-  box-sizing: border-box;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center;
+  flex-direction: column; color: white; text-align: center; z-index: 2000; cursor: pointer;
+  padding: 3vh; box-sizing: border-box;
 }
+#overlayContent { margin-bottom: 5vh; display: flex; flex-direction: column; align-items: center; max-width: 90%; max-height: 100%; justify-content: center; }
+#overlayText { font-size: clamp(12px, 2vh, 24px); margin-bottom: 2vh; line-height: 1.3; }
+#overlayLogo { max-width: 80%; max-height: 40vh; width: auto; height: auto; margin: 0 auto; }
+#overlayHint { margin-top: 2vh; font-size: clamp(10px, 1.5vh, 18px); opacity: 0.8; }
 
-#overlayContent {
-margin-bottom: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 90%;
-  max-height: 100%;
-  justify-content: center;
+#sidebar {
+  position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%;
+  background:rgba(20,20,20,0.95); display:flex; flex-direction:column;
+  color:white; box-shadow:2px 0 10px rgba(0,0,0,0.5);
+  transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000;
 }
-
-#overlayText {
-  font-size: clamp(12px, 2vh, 24px); /* scales with screen height */
-  margin-bottom: 2vh;
-  line-height: 1.3;
-}
-
-#overlayLogo {
-  max-width: 80%;
-  max-height: 40vh; /* logo scales by height */
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-}
-
-#overlayHint {
-  margin-top: 2vh;
-  font-size: clamp(10px, 1.5vh, 18px); /* scales with screen height */
-  opacity: 0.8;
-}
-
-
-#sidebar { position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%; background:rgba(20,20,20,0.95); overflow-y:auto; color:white; padding:0; box-shadow:2px 0 10px rgba(0,0,0,0.5); transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000; }
 #sidebar.open { transform:translateX(0); opacity:1; }
-
-#sidebarHeader { display: flex; flex-direction: column; gap: 10px; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+#sidebarHeader { flex:0 0 auto; display:flex; flex-direction:column; gap:10px; padding:10px; box-sizing:border-box; background:#222; position:sticky; top:0; z-index:10; }
 #searchInput, #favoritesToggle { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
 #searchInput { border: none; background: White; color: #111; }
 #searchInput::placeholder { color: #aaa; }
 #favoritesToggle { background: #444; color: white; border: none; cursor: pointer; text-align: left; }
 #favoritesToggle.active { background:#28a745; }
 
-#channelList { list-style:none; padding:0; margin:0; }
+#channelList { flex:1; overflow-y:auto; list-style:none; padding:0; margin:0; }
 #channelList li { display:flex; justify-content:space-between; align-items:center; padding:12px 10px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.1); }
 #channelList li:hover { background: rgba(255,255,255,0.2); }
 #channelList li.highlight { background:#28a745; color:white; font-weight:600; }
 .favorite-btn { margin-left:10px; cursor:pointer; }
 .favorite-btn.active { color:gold; }
+
+#sidebarFooter {
+  flex:0 0 auto; padding:10px; background:#111; position:sticky; bottom:0; z-index:10;
+}
+#supportBtn { width:100%; padding:12px; border:none; border-radius:8px; font-size:14px; cursor:pointer; background:#007bff; color:white; font-weight:bold; }
+#supportBtn:hover { background:#0056b3; }
+
+.modal { display:none; position:fixed; z-index:5000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
+.modal-content { background:#fff; padding:20px; border-radius:12px; text-align:center; color:#111; max-width:90%; max-height:90%; overflow:auto; }
+.modal .close { position:absolute; top:15px; right:25px; color:#fff; font-size:30px; font-weight:bold; cursor:pointer; }
 
 body.hide-cursor { cursor:none; }
 @media (orientation: landscape){ #videoPlayer{width:100vw;height:100vh;top:0;left:0;transform:none;} }
@@ -129,8 +117,9 @@ Promise.all([
   new Promise(res => scriptHls.onload = res),
   new Promise(res => scriptShaka.onload = res)
 ]).then(initPlayer);
+
 // ==========================
-// Built-in Channels
+// (Keep your builtInChannels here - unchanged)
 // ==========================
 const builtInChannels = [
   { 
@@ -459,9 +448,8 @@ const builtInChannels = [
     } 
   }
 ];
-
 // ==========================
-// Player Logic (with smart retry, 1s timeout)
+// Player Logic (added modal + pinned controls)
 // ==========================
 function initPlayer(){
   const container=document.getElementById("playerContainer");
@@ -473,12 +461,20 @@ function initPlayer(){
   const loadingText=document.getElementById("loadingText");
   const searchInput=document.getElementById("searchInput");
   const favoritesToggle=document.getElementById("favoritesToggle");
+  const supportBtn=document.getElementById("supportBtn");
+  const modal=document.getElementById("gcashModal");
+  const modalClose=document.querySelector("#gcashModal .close");
 
   let channels=[...builtInChannels];
   let currentIndex=0, hls=null, shakaPlayer=null, preloaded={}, overlayDismissed=false, lastEnterTime=0;
   let favorites=JSON.parse(localStorage.getItem("favorites")||"[]"), showFavoritesOnly=false;
 
   video.controls=false; video.preload="auto";
+
+  // Modal logic
+  supportBtn.onclick=()=>{ modal.style.display="flex"; };
+  modalClose.onclick=()=>{ modal.style.display="none"; };
+  window.onclick=(e)=>{ if(e.target===modal) modal.style.display="none"; };
 
   // Playlist Loader
   async function loadPlaylist(url){
@@ -495,8 +491,10 @@ function initPlayer(){
 
   // Render Channels
   function renderChannels(){
-    channelList.innerHTML=""; let list=channels;
-    if(showFavoritesOnly) list=channels.filter(ch=>favorites.includes(ch.name));
+    channelList.innerHTML=""; 
+    let list=[...channels];
+    list.sort((a,b)=>a.name.localeCompare(b.name)); // alphabetical
+    if(showFavoritesOnly) list=list.filter(ch=>favorites.includes(ch.name));
     const query=searchInput.value.toLowerCase(); if(query) list=list.filter(ch=>ch.name.toLowerCase().includes(query));
     list.forEach((ch,idx)=>{
       const li=document.createElement("li"); li.textContent=ch.name;
@@ -528,7 +526,6 @@ function initPlayer(){
     const prog=setInterval(()=>{ if(progress<95){progress+=5;loadingText.textContent=progress+"%";} },200);
 
     let retryTimeout;
-
     function onReady(){ clearInterval(prog); clearTimeout(retryTimeout); loadingText.textContent="100%"; setTimeout(()=>spinner.style.display="none",300); video.play().catch(err=>{console.error("Playback error:",err); if(retry<1) playChannel(i,retry+1);}); }
     function onError(err){ console.error("Load failed:",err); clearInterval(prog); clearTimeout(retryTimeout); spinner.style.display="none"; if(retry<1) playChannel(i,retry+1); }
 
@@ -563,5 +560,3 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
-
-
