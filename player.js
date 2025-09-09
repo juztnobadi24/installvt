@@ -29,8 +29,16 @@ document.body.innerHTML = `
 <div id="gcashModal" class="modal">
   <div class="modal-content">
     <h2>Support thru GCash</h2>
-    <p>Scan or send to: <b>09776192184</b></p>
+    <p>
+      Scan or send to: 
+      <b id="gcashNumber" style="cursor:pointer; color:#007bff;" title="Click to copy">
+        09776192184
+      </b>
+    </p>
     <img src="gcash-placeholder.png" alt="GCash QR">
+    <p id="copyMsg" style="font-size:12px; color:green; display:none; margin-top:8px;">
+      Number copied!
+    </p>
   </div>
 </div>
 
@@ -68,6 +76,17 @@ document.body.innerHTML = `
   border-radius: 10px;
 }
 </style>
+
+<script>
+document.getElementById("gcashNumber").addEventListener("click", function() {
+  const number = this.innerText;
+  navigator.clipboard.writeText(number).then(() => {
+    const msg = document.getElementById("copyMsg");
+    msg.style.display = "block";
+    setTimeout(() => msg.style.display = "none", 2000);
+  });
+});
+</script>
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
@@ -591,6 +610,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
