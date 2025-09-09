@@ -7,10 +7,10 @@ document.body.innerHTML = `
 
   <div id="overlay">
     <div id="overlayContent">
-      <div id="overlayText" style="font-size:28px; font-weight:bold;">Welcome to Juzt TV</div>
+      <div id="overlayText" style="font-size:28px; font-weight:bold;">Welcome!!!</div>
       <div style="font-size:20px; margin-top:10px;">Click anywhere or press Enter/OK to start</div>
       <img id="overlayLogo" src="your-logo.png" alt="Juzt TV Logo">
-      <div id="overlayHint">Help us keep the service running smoothly. Your generosity can support our efforts. Gcash: 09776192184</div>
+      <div id="overlayHint">Help us keep the service running smoothly. Your generosity can support our efforts.</div>
     </div>
   </div>
 
@@ -556,4 +556,5 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
