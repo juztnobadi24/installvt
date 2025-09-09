@@ -164,6 +164,43 @@ const builtInChannels = [
     keyIds:{ "bd17afb5dc9648a39be79ee3634dd4b8":"3ecf305d54a7729299b93a3d69c02ea5" } 
   } 
 },
+
+ {
+    name: "Disney Eastern Feed SD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/DisneyChannelEast/sd"
+  },
+  {
+    name: "Disney Eastern Feed HD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/DisneyChannelEast/hd"
+  },
+  {
+    name: "Disney Junior USA East SD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/DisneyJuniorEast/sd"
+  },
+  {
+    name: "Disney Junior USA East HD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/DisneyJuniorEast/hd"
+  },
+  {
+    name: "Disney XD USA Eastern Feed SD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/DisneyXDEast/sd"
+  },
+  {
+    name: "Disney XD USA Eastern Feed HD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/DisneyXDEast/hd"
+  },
+  {
+    name: "E! Entertainment USA Eastern Feed SD",
+    type: "hls",
+    manifestUri: "https://tvpass.org/live/EEast/sd"
+  },
+  
   { 
     name:"PTV 4", 
     type:"dash", 
@@ -591,3 +628,4 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
