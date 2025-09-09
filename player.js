@@ -20,25 +20,11 @@ document.body.innerHTML = `
       <button id="favoritesToggle">⭐ Favorites</button>
     </div>
     <ul id="channelList"></ul>
-    <div id="sidebarFooter">
-      <button id="supportBtn">💙 Support thru GCash</button>
-    </div>
   </div>
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
     <div id="loadingText">0%</div>
-  </div>
-
-  <!-- Support Modal -->
-  <div id="supportModal" class="modal">
-    <div class="modalContent">
-      <span id="modalClose">&times;</span>
-      <h2>Support Us via GCash</h2>
-      <p>Send your support to:</p>
-      <h3>09776192184</h3>
-      <img src="gcash-qr.png" alt="GCash QR Code" style="max-width:200px; margin-top:15px;">
-    </div>
   </div>
 </div>
 `;
@@ -51,7 +37,6 @@ style.textContent = `
 html, body { margin:0; padding:0; width:100%; height:100%; background:black; font-family:Arial,sans-serif; overflow:hidden; touch-action:manipulation;}
 #playerContainer { position:relative; width:100vw; height:100vh; background:black; overflow:hidden; }
 #videoPlayer { position:absolute; top:50%; left:50%; width:100%; height:100%; object-fit:contain; transform:translate(-50%, -50%);}
-
 #overlay {
   position: absolute;
   top: 0;
@@ -67,12 +52,12 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
   text-align: center;
   z-index: 2000;
   cursor: pointer;
-  padding: 3vh;
+  padding: 3vh; /* scale padding with screen height */
   box-sizing: border-box;
 }
 
 #overlayContent {
-  margin-bottom: 5vh;
+margin-bottom: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,14 +67,14 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 }
 
 #overlayText {
-  font-size: clamp(12px, 2vh, 24px);
+  font-size: clamp(12px, 2vh, 24px); /* scales with screen height */
   margin-bottom: 2vh;
   line-height: 1.3;
 }
 
 #overlayLogo {
   max-width: 80%;
-  max-height: 40vh;
+  max-height: 40vh; /* logo scales by height */
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -97,37 +82,15 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 
 #overlayHint {
   margin-top: 2vh;
-  font-size: clamp(10px, 1.5vh, 18px);
+  font-size: clamp(10px, 1.5vh, 18px); /* scales with screen height */
   opacity: 0.8;
 }
 
-#sidebar { 
-  position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%; 
-  background:rgba(20,20,20,0.95); 
-  overflow-y:auto; 
-  color:white; padding:0; 
-  box-shadow:2px 0 10px rgba(0,0,0,0.5); 
-  transform:translateX(-100%); opacity:0; 
-  transition:transform 0.4s, opacity 0.4s; 
-  z-index:1000; 
-}
+
+#sidebar { position:absolute; top:0; left:0; width:30%; max-width:320px; height:100%; background:rgba(20,20,20,0.95); overflow-y:auto; color:white; padding:0; box-shadow:2px 0 10px rgba(0,0,0,0.5); transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000; }
 #sidebar.open { transform:translateX(0); opacity:1; }
 
-/* 🔥 Sticky Header */
-#sidebarHeader { 
-  position: sticky; 
-  top: 0; 
-  background: rgba(20,20,20,0.95); 
-  z-index: 10; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 10px; 
-  padding: 10px; 
-  margin: 0; 
-  box-sizing: border-box; 
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
+#sidebarHeader { display: flex; flex-direction: column; gap: 10px; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
 #searchInput, #favoritesToggle { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
 #searchInput { border: none; background: White; color: #111; }
 #searchInput::placeholder { color: #aaa; }
@@ -141,29 +104,6 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 .favorite-btn { margin-left:10px; cursor:pointer; }
 .favorite-btn.active { color:gold; }
 
-/* 🔥 Sticky Footer */
-#sidebarFooter {
-  position: sticky;
-  bottom: 0;
-  background: rgba(20,20,20,0.95);
-  padding: 10px;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.5);
-}
-#supportBtn {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  background: #0077cc;
-  color: white;
-  font-weight: bold;
-}
-#supportBtn:hover {
-  background: #005fa3;
-}
-
 body.hide-cursor { cursor:none; }
 @media (orientation: landscape){ #videoPlayer{width:100vw;height:100vh;top:0;left:0;transform:none;} }
 
@@ -171,32 +111,6 @@ body.hide-cursor { cursor:none; }
 .spinner { border:6px solid rgba(255,255,255,0.2); border-top:6px solid #fff; border-radius:50%; width:80px; height:80px; animation:spin 1s linear infinite; }
 #loadingText { position:absolute; font-size:16px; font-weight:bold; color:white; pointer-events:none; }
 @keyframes spin { 100% { transform:rotate(360deg);} }
-
-/* 🔥 Modal Styles */
-.modal {
-  display: none; /* hidden by default */
-  position: fixed;
-  z-index: 3000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-}
-.modalContent {
-  background: #222;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 300px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-}
-#modalClose {
-  float: right;
-  cursor: pointer;
-  font-size: 20px;
-}
 `;
 document.head.appendChild(style);
 
@@ -215,47 +129,6 @@ Promise.all([
   new Promise(res => scriptHls.onload = res),
   new Promise(res => scriptShaka.onload = res)
 ]).then(initPlayer);
-
-// ==========================
-// Player Logic
-// ==========================
-function initPlayer(){
-  const container=document.getElementById("playerContainer");
-  const video=document.getElementById("videoPlayer");
-  const sidebar=document.getElementById("sidebar");
-  const channelList=document.getElementById("channelList");
-  const overlay=document.getElementById("overlay");
-  const spinner=document.getElementById("loadingSpinner");
-  const loadingText=document.getElementById("loadingText");
-  const searchInput=document.getElementById("searchInput");
-  const favoritesToggle=document.getElementById("favoritesToggle");
-
-  // ✅ Modal controls
-  const supportBtn=document.getElementById("supportBtn");
-  const supportModal=document.getElementById("supportModal");
-  const modalClose=document.getElementById("modalClose");
-
-  // Open modal
-  supportBtn.addEventListener("click", ()=> {
-    supportModal.style.display = "flex";
-  });
-
-  // Close modal
-  modalClose.addEventListener("click", ()=> {
-    supportModal.style.display = "none";
-  });
-
-  // Close if clicking outside
-  window.addEventListener("click", (e)=> { 
-    if(e.target === supportModal) {
-      supportModal.style.display = "none";
-    }
-  });
-
-  // ... your channel/favorites/search logic continues here ...
-
-
-
 // ==========================
 // Built-in Channels
 // ==========================
@@ -690,18 +563,5 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
