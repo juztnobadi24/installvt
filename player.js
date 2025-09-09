@@ -21,7 +21,7 @@ document.body.innerHTML = `
     </div>
     <ul id="channelList"></ul>
     <div id="sidebarFooter">
-      <button id="supportBtn">💙 Support thru GCash</button>
+      <button id="supportBtn">Support thru GCash</button>
     </div>
   </div>
 
@@ -591,6 +591,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
