@@ -20,11 +20,25 @@ document.body.innerHTML = `
       <button id="favoritesToggle">⭐ Favorites</button>
     </div>
     <ul id="channelList"></ul>
+    <div id="sidebarFooter">
+      <button id="supportBtn">💙 Support thru GCash</button>
+    </div>
   </div>
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
     <div id="loadingText">0%</div>
+  </div>
+
+  <!-- Support Modal -->
+  <div id="supportModal" class="modal">
+    <div class="modalContent">
+      <span id="modalClose">&times;</span>
+      <h2>Support Us via GCash</h2>
+      <p>Send your support to:</p>
+      <h3>09776192184</h3>
+      <img src="gcash-qr.png" alt="GCash QR Code" style="max-width:200px; margin-top:15px;">
+    </div>
   </div>
 </div>
 `;
@@ -111,7 +125,7 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
   padding: 10px; 
   margin: 0; 
   box-sizing: border-box; 
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5); /* shadow under header */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
 #searchInput, #favoritesToggle { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
@@ -127,6 +141,29 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 .favorite-btn { margin-left:10px; cursor:pointer; }
 .favorite-btn.active { color:gold; }
 
+/* 🔥 Sticky Footer */
+#sidebarFooter {
+  position: sticky;
+  bottom: 0;
+  background: rgba(20,20,20,0.95);
+  padding: 10px;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.5);
+}
+#supportBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background: #0077cc;
+  color: white;
+  font-weight: bold;
+}
+#supportBtn:hover {
+  background: #005fa3;
+}
+
 body.hide-cursor { cursor:none; }
 @media (orientation: landscape){ #videoPlayer{width:100vw;height:100vh;top:0;left:0;transform:none;} }
 
@@ -134,6 +171,32 @@ body.hide-cursor { cursor:none; }
 .spinner { border:6px solid rgba(255,255,255,0.2); border-top:6px solid #fff; border-radius:50%; width:80px; height:80px; animation:spin 1s linear infinite; }
 #loadingText { position:absolute; font-size:16px; font-weight:bold; color:white; pointer-events:none; }
 @keyframes spin { 100% { transform:rotate(360deg);} }
+
+/* 🔥 Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modalContent {
+  background: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+#modalClose {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
 `;
 document.head.appendChild(style);
 
@@ -152,6 +215,33 @@ Promise.all([
   new Promise(res => scriptHls.onload = res),
   new Promise(res => scriptShaka.onload = res)
 ]).then(initPlayer);
+
+// ==========================
+// Player Logic
+// ==========================
+function initPlayer(){
+  const container=document.getElementById("playerContainer");
+  const video=document.getElementById("videoPlayer");
+  const sidebar=document.getElementById("sidebar");
+  const channelList=document.getElementById("channelList");
+  const overlay=document.getElementById("overlay");
+  const spinner=document.getElementById("loadingSpinner");
+  const loadingText=document.getElementById("loadingText");
+  const searchInput=document.getElementById("searchInput");
+  const favoritesToggle=document.getElementById("favoritesToggle");
+
+  // 🔥 Support modal controls
+  const supportBtn=document.getElementById("supportBtn");
+  const supportModal=document.getElementById("supportModal");
+  const modalClose=document.getElementById("modalClose");
+
+  supportBtn.onclick=()=> supportModal.style.display="flex";
+  modalClose.onclick=()=> supportModal.style.display="none";
+  window.onclick=(e)=>{ if(e.target===supportModal) supportModal.style.display="none"; };
+
+  // (rest of your existing initPlayer logic stays unchanged...)
+}
+
 // ==========================
 // Built-in Channels
 // ==========================
@@ -586,6 +676,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
