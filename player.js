@@ -27,7 +27,7 @@ document.body.innerHTML = `
 
 <!-- GCash Modal -->
 <div id="gcashModal" class="modal">
-  <div class="modal-content">
+  <div class="modal-content" id="gcashContent">
     <h2>Support thru GCash</h2>
     <p>
       Scan or send to: 
@@ -73,17 +73,32 @@ document.body.innerHTML = `
 </style>
 
 <script>
-const gcashNumber = document.getElementById("gcashNumber");
-const copyMsg = document.getElementById("copyMsg");
+const gcashModal   = document.getElementById("gcashModal");
+const gcashContent = document.getElementById("gcashContent");
+const gcashNumber  = document.getElementById("gcashNumber");
+const copyMsg      = document.getElementById("copyMsg");
 
-gcashNumber.addEventListener("click", function(event) {
-  event.stopPropagation(); // prevent modal from closing
+// Close modal when clicking outside content
+gcashModal.addEventListener("click", function(e) {
+  if (e.target === gcashModal) {
+    gcashModal.style.display = "none";
+  }
+});
+
+// Prevent clicks inside modal content from closing
+gcashContent.addEventListener("click", function(e) {
+  e.stopPropagation();
+});
+
+// Copy number when clicked
+gcashNumber.addEventListener("click", function(e) {
+  e.stopPropagation(); // extra safety
   const number = this.innerText.trim();
   navigator.clipboard.writeText(number).then(() => {
     copyMsg.style.display = "block";
     setTimeout(() => copyMsg.style.display = "none", 2000);
   }).catch(err => {
-    console.error("Clipboard copy failed:", err);
+    alert("Failed to copy: " + err);
   });
 });
 </script>
@@ -611,6 +626,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
