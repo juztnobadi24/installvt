@@ -164,23 +164,6 @@ const builtInChannels = [
     keyIds:{ "bd17afb5dc9648a39be79ee3634dd4b8":"3ecf305d54a7729299b93a3d69c02ea5" } 
   } 
 },
-
- { 
-    name: "Anime Zone TV (480p)", 
-    type: "hls", 
-    manifestUri: "http://animezonetv.net/hls/stream.m3u8" 
-  },
-  { 
-    name: "Anixe + (360p)", 
-    type: "hls", 
-    manifestUri: "https://ma.anixa.tv/clips/stream/anixesd/index.m3u8" 
-  },
-  { 
-    name: "Anixe HD Serie (360p)", 
-    type: "hls", 
-    manifestUri: "https://ma.anixa.tv/clips/stream/anixehd/index.m3u8" 
-  },
-  
   { 
     name:"PTV 4", 
     type:"dash", 
@@ -608,6 +591,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
