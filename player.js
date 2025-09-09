@@ -82,7 +82,7 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 .favorite-btn.active { color:gold; }
 
 #sidebarFooter {
-  flex:0 0 auto; padding:10px; background:#111; position:sticky; bottom:0; z-index:10;
+  flex:0 0 auto; padding:10px; background:#222; position:sticky; bottom:0; z-index:10;
 }
 #supportBtn { width:100%; padding:12px; border:none; border-radius:8px; font-size:14px; cursor:pointer; background:#007bff; color:white; font-weight:bold; }
 #supportBtn:hover { background:#0056b3; }
@@ -556,3 +556,4 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
