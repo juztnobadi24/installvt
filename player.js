@@ -255,6 +255,30 @@ const builtInChannels = [
     manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbohd.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "d47ebabf7a21430b83a8c4b82d9ef6b1":"54c213b2b5f885f1e0290ee4131d425b" } }
   },
+    { 
+    name:"HBO Family HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbofam.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "872910c843294319800d85f9a0940607":"f79fd895b79c590708cf5e8b5c6263be" } }
+  },
+  { 
+    name:"HBO Signature HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_hbosign.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "a06ca6c275744151895762e0346380f5":"559da1b63eec77b5a942018f14d3f56f" } }
+  },
+  { 
+    name:"HBO Hits HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-09-prod.akamaized.net/out/u/cg_hbohits.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "b04ae8017b5b4601a5a0c9060f6d5b7d":"a8795f3bdb8a4778b7e888ee484cc7a1" } }
+  },
+   { 
+    name:"Cinemax HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_cinemax.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "b207c44332844523a3a3b0469e5652d7":"fe71aea346db08f8c6fbf0592209f955" } }
+  },
   { 
     name:"HITS Movies", 
     type:"dash", 
@@ -272,30 +296,6 @@ const builtInChannels = [
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_tapactionflix_hd1.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "bee1066160c0424696d9bf99ca0645e3":"f5b72bf3b89b9848de5616f37de040b7" } }
-  },
-  { 
-    name:"HBO Family HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbofam.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "872910c843294319800d85f9a0940607":"f79fd895b79c590708cf5e8b5c6263be" } }
-  },
-  { 
-    name:"Cinemax HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_cinemax.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "b207c44332844523a3a3b0469e5652d7":"fe71aea346db08f8c6fbf0592209f955" } }
-  },
-  { 
-    name:"HBO Signature HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_hbosign.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "a06ca6c275744151895762e0346380f5":"559da1b63eec77b5a942018f14d3f56f" } }
-  },
-  { 
-    name:"HBO Hits HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-09-prod.akamaized.net/out/u/cg_hbohits.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "b04ae8017b5b4601a5a0c9060f6d5b7d":"a8795f3bdb8a4778b7e888ee484cc7a1" } }
   },
   { 
     name:"CNN HD", 
@@ -591,6 +591,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
