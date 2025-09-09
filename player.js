@@ -28,7 +28,6 @@ document.body.innerHTML = `
   <!-- GCash Modal -->
   <div id="gcashModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
       <h2>Support thru GCash</h2>
       <p>Scan or send to: <b>09776192184</b></p>
       <img src="gcash-placeholder.png" alt="GCash QR" style="max-width:80%; border-radius:10px;">
@@ -90,7 +89,6 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 
 .modal { display:none; position:fixed; z-index:5000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
 .modal-content { background:#fff; padding:20px; border-radius:12px; text-align:center; color:#111; max-width:90%; max-height:90%; overflow:auto; }
-.modal .close { position:absolute; top:15px; right:25px; color:#fff; font-size:30px; font-weight:bold; cursor:pointer; }
 
 body.hide-cursor { cursor:none; }
 @media (orientation: landscape){ #videoPlayer{width:100vw;height:100vh;top:0;left:0;transform:none;} }
@@ -448,8 +446,9 @@ const builtInChannels = [
     } 
   }
 ];
+
 // ==========================
-// Player Logic (added modal + pinned controls)
+// Player Logic
 // ==========================
 function initPlayer(){
   const container=document.getElementById("playerContainer");
@@ -463,7 +462,6 @@ function initPlayer(){
   const favoritesToggle=document.getElementById("favoritesToggle");
   const supportBtn=document.getElementById("supportBtn");
   const modal=document.getElementById("gcashModal");
-  const modalClose=document.querySelector("#gcashModal .close");
 
   let channels=[...builtInChannels];
   let currentIndex=0, hls=null, shakaPlayer=null, preloaded={}, overlayDismissed=false, lastEnterTime=0;
@@ -471,10 +469,9 @@ function initPlayer(){
 
   video.controls=false; video.preload="auto";
 
-  // Modal logic
+  // Modal logic (close anywhere)
   supportBtn.onclick=()=>{ modal.style.display="flex"; };
-  modalClose.onclick=()=>{ modal.style.display="none"; };
-  window.onclick=(e)=>{ if(e.target===modal) modal.style.display="none"; };
+  modal.onclick=()=>{ modal.style.display="none"; };
 
   // Playlist Loader
   async function loadPlaylist(url){
@@ -489,11 +486,10 @@ function initPlayer(){
     }catch(err){ console.error("Playlist load error:",err); alert("Unable to load playlist."); }
   }
 
-  // Render Channels
+  // Render Channels (no sorting)
   function renderChannels(){
     channelList.innerHTML=""; 
     let list=[...channels];
-    list.sort((a,b)=>a.name.localeCompare(b.name)); // alphabetical
     if(showFavoritesOnly) list=list.filter(ch=>favorites.includes(ch.name));
     const query=searchInput.value.toLowerCase(); if(query) list=list.filter(ch=>ch.name.toLowerCase().includes(query));
     list.forEach((ch,idx)=>{
