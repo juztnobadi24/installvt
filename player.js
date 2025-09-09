@@ -253,7 +253,7 @@ function initPlayer(){
   });
 
   // ... your channel/favorites/search logic continues here ...
-}
+
 
 
 // ==========================
@@ -586,7 +586,7 @@ const builtInChannels = [
     } 
   }
 ];
-
+}
 // ==========================
 // Player Logic (with smart retry, 1s timeout)
 // ==========================
@@ -690,6 +690,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
