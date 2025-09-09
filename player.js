@@ -54,16 +54,16 @@ document.body.innerHTML = `
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  max-width: 70%;
-  max-height: 70%;
+  max-width: 60%;
+  max-height: 60%;
   text-align: center;
   overflow: auto;
 }
 
 /* Fit image inside screen */
 .modal-content img {
-  max-width: 90%;
-  max-height: 60vh;
+  max-width: 80%;
+  max-height: 50vh;
   height: auto;
   border-radius: 10px;
 }
@@ -591,6 +591,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
