@@ -71,7 +71,7 @@ document.body.innerHTML = `
 
   <div id="loadingSpinner">
     <div class="spinner"></div>
-    
+    <div id="loadingText">0%</div>
   </div>
 </div>
 `;
@@ -130,6 +130,7 @@ body.hide-cursor { cursor:none; }
 
 #loadingSpinner { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2000; display:none; align-items:center; justify-content:center; color:white; }
 .spinner { border:6px solid rgba(255,255,255,0.2); border-top:6px solid #fff; border-radius:50%; width:80px; height:80px; animation:spin 1s linear infinite; }
+#loadingText { position:absolute; font-size:16px; font-weight:bold; color:white; pointer-events:none; }
 @keyframes spin { 100% { transform:rotate(360deg);} }
 `;
 document.head.appendChild(style);
@@ -491,6 +492,7 @@ function initPlayer(){
   const channelList=document.getElementById("channelList");
   const overlay=document.getElementById("overlay");
   const spinner=document.getElementById("loadingSpinner");
+  const loadingText=document.getElementById("loadingText");
   const searchInput=document.getElementById("searchInput");
   const favoritesToggle=document.getElementById("favoritesToggle");
   const supportBtn=document.getElementById("supportBtn");
@@ -551,9 +553,11 @@ function initPlayer(){
     currentIndex=i; const ch=channels[i]; const url=ch.manifestUri;
     video.muted=false; highlightChannel(i);
     if(hls){hls.destroy();hls=null;} if(shakaPlayer){shakaPlayer.destroy();shakaPlayer=null;}
-
+    spinner.style.display="flex"; let progress=0; loadingText.textContent="0%";
+    const prog=setInterval(()=>{ if(progress<95){progress+=5;loadingText.textContent=progress+"%";} },200);
 
     let retryTimeout;
+    function onReady(){ clearInterval(prog); clearTimeout(retryTimeout); loadingText.textContent="100%"; setTimeout(()=>spinner.style.display="none",300); video.play().catch(err=>{console.error("Playback error:",err); if(retry<1) playChannel(i,retry+1);}); }
     function onError(err){ console.error("Load failed:",err); clearInterval(prog); clearTimeout(retryTimeout); spinner.style.display="none"; if(retry<1) playChannel(i,retry+1); }
 
     retryTimeout=setTimeout(()=>{ console.warn("Retrying channel load..."); if(retry<1) playChannel(i,retry+1); },1000);
@@ -587,8 +591,6 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
-
-
 
 
 
