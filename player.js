@@ -174,7 +174,7 @@ body.hide-cursor { cursor:none; }
 
 /* 🔥 Modal Styles */
 .modal {
-  display: none;
+  display: none; /* hidden by default */
   position: fixed;
   z-index: 3000;
   left: 0; top: 0;
@@ -182,9 +182,6 @@ body.hide-cursor { cursor:none; }
   background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
-}
-.modal.show {
-  display: flex !important;
 }
 .modalContent {
   background: #222;
@@ -238,12 +235,26 @@ function initPlayer(){
   const supportModal=document.getElementById("supportModal");
   const modalClose=document.getElementById("modalClose");
 
-  supportBtn.addEventListener("click", ()=> supportModal.classList.add("show"));
-  modalClose.addEventListener("click", ()=> supportModal.classList.remove("show"));
-  window.addEventListener("click", (e)=> { if(e.target===supportModal) supportModal.classList.remove("show"); });
+  // Open modal
+  supportBtn.addEventListener("click", ()=> {
+    supportModal.style.display = "flex";
+  });
 
-  // (your channel/favorites/search logic continues here...)
+  // Close modal
+  modalClose.addEventListener("click", ()=> {
+    supportModal.style.display = "none";
+  });
+
+  // Close if clicking outside
+  window.addEventListener("click", (e)=> { 
+    if(e.target === supportModal) {
+      supportModal.style.display = "none";
+    }
+  });
+
+  // ... your channel/favorites/search logic continues here ...
 }
+
 
 // ==========================
 // Built-in Channels
@@ -679,6 +690,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
