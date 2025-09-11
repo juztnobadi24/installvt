@@ -118,14 +118,11 @@ body.hide-cursor { cursor:none; }
 #loadingSpinner { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2000; display:none; align-items:center; justify-content:center; color:white; }
 .spinner {
   border:4px solid rgba(255,255,255,0.18);
-  border-top:4px solid #2e67e2; /* Primary logo blue */
-  border-right:4px solid #ffcc00; /* Accent logo yellow */
-  border-bottom:4px solid #2e67e2;
+  border-right:4px solid #fec107; /* Accent logo yellow */
   border-radius:50%;
   width:48px;
   height:48px;
   animation:spin 1s linear infinite;
-  box-shadow:0 0 8px #2e67e255, 0 0 4px #ffcc0033;
 }
 @keyframes spin { 100% { transform:rotate(360deg);} }
 `;
@@ -643,3 +640,4 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
