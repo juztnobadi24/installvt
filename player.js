@@ -1,10 +1,9 @@
 // ==========================
-// IPTV Player Core (Fixed Controls + % Counter + Smart Retry)
+// IPTV Player Core (Spinner update - No Percentage, Smaller, Logo Color, Spinner stays spinning)
 // ==========================
 document.body.innerHTML = `
 <div id="playerContainer">
   <video id="videoPlayer" autoplay muted playsinline webkit-playsinline></video>
-
   <div id="overlay">
     <div id="overlayContent">
       <div id="overlayText" style="font-size:28px; font-weight:bold;">Welcome!!!</div>
@@ -13,7 +12,6 @@ document.body.innerHTML = `
       <div id="overlayHint">Help us keep the service running smoothly. Your generosity can support our efforts.</div>
     </div>
   </div>
-
   <div id="sidebar">
     <div id="sidebarHeader">
       <input id="searchInput" type="text" placeholder="Search channel...">
@@ -24,61 +22,49 @@ document.body.innerHTML = `
       <button id="supportBtn">Support thru GCash</button>
     </div>
   </div>
-
-<!-- GCash Modal -->
-<div id="gcashModal" class="modal">
-  <div class="modal-content">
-    <h2>Support thru GCash</h2>
-    <p>Scan or send to: <b>09776192184</b></p>
-    <img src="gcash-placeholder.png" alt="GCash QR">
+  <!-- GCash Modal -->
+  <div id="gcashModal" class="modal">
+    <div class="modal-content">
+      <h2>Support thru GCash</h2>
+      <p>Scan or send to: <b>09776192184</b></p>
+      <img src="gcash-placeholder.png" alt="GCash QR">
+    </div>
   </div>
-</div>
-
-<style>
-/* Fullscreen overlay */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8); /* Semi-transparent background */
-  justify-content: center;
-  align-items: center;
-}
-
-/* Centered modal content */
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 80%;
-  max-height: 80%;
-  text-align: center;
-  overflow: auto;
-}
-
-/* Fit image inside screen */
-.modal-content img {
-  max-width: 80%;
-  max-height: 50vh;
-  height: auto;
-  border-radius: 10px;
-}
-</style>
-
+  <style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 80%;
+    max-height: 80%;
+    text-align: center;
+    overflow: auto;
+  }
+  .modal-content img {
+    max-width: 80%;
+    max-height: 50vh;
+    height: auto;
+    border-radius: 10px;
+  }
+  </style>
   <div id="loadingSpinner">
     <div class="spinner"></div>
-    <div id="loadingText">0%</div>
   </div>
 </div>
 `;
 
-// ==========================
-// Styles
-// ==========================
 const style = document.createElement("style");
 style.textContent = `
 html, body { margin:0; padding:0; width:100%; height:100%; background:black; font-family:Arial,sans-serif; overflow:hidden; touch-action:manipulation;}
@@ -129,8 +115,14 @@ body.hide-cursor { cursor:none; }
 @media (orientation: landscape){ #videoPlayer{width:100vw;height:100vh;top:0;left:0;transform:none;} }
 
 #loadingSpinner { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2000; display:none; align-items:center; justify-content:center; color:white; }
-.spinner { border:6px solid rgba(255,255,255,0.2); border-top:6px solid #fff; border-radius:50%; width:80px; height:80px; animation:spin 1s linear infinite; }
-#loadingText { position:absolute; font-size:16px; font-weight:bold; color:white; pointer-events:none; }
+.spinner {
+  border:4px solid rgba(255,255,255,0.18);
+  border-top:4px solid #fec107; /* Accent logo yellow */
+  border-radius:50%;
+  width:48px;
+  height:48px;
+  animation:spin 1s linear infinite;
+  }
 @keyframes spin { 100% { transform:rotate(360deg);} }
 `;
 document.head.appendChild(style);
@@ -481,7 +473,6 @@ const builtInChannels = [
     } 
   }
 ];
-
 // ==========================
 // Player Logic
 // ==========================
@@ -492,7 +483,6 @@ function initPlayer(){
   const channelList=document.getElementById("channelList");
   const overlay=document.getElementById("overlay");
   const spinner=document.getElementById("loadingSpinner");
-  const loadingText=document.getElementById("loadingText");
   const searchInput=document.getElementById("searchInput");
   const favoritesToggle=document.getElementById("favoritesToggle");
   const supportBtn=document.getElementById("supportBtn");
@@ -549,17 +539,28 @@ function initPlayer(){
   function highlightChannel(i){ [...channelList.children].forEach((li,idx)=>li.classList.toggle("highlight",idx===i)); if(channelList.children[i]) channelList.children[i].scrollIntoView({block:"center",behavior:"smooth"}); }
 
   // Playback with retry after 1s
+  let spinnerVisible = false;
+  function showSpinner() {
+    if (!spinnerVisible) {
+      spinner.style.display = "flex";
+      spinnerVisible = true;
+    }
+  }
+  function hideSpinner() {
+    if (spinnerVisible) {
+      spinner.style.display = "none";
+      spinnerVisible = false;
+    }
+  }
+
   function playChannel(i, retry=0){
     currentIndex=i; const ch=channels[i]; const url=ch.manifestUri;
     video.muted=false; highlightChannel(i);
     if(hls){hls.destroy();hls=null;} if(shakaPlayer){shakaPlayer.destroy();shakaPlayer=null;}
-    spinner.style.display="flex"; let progress=0; loadingText.textContent="0%";
-    const prog=setInterval(()=>{ if(progress<95){progress+=5;loadingText.textContent=progress+"%";} },200);
-
+    showSpinner();
     let retryTimeout;
-    function onReady(){ clearInterval(prog); clearTimeout(retryTimeout); loadingText.textContent="100%"; setTimeout(()=>spinner.style.display="none",300); video.play().catch(err=>{console.error("Playback error:",err); if(retry<1) playChannel(i,retry+1);}); }
-    function onError(err){ console.error("Load failed:",err); clearInterval(prog); clearTimeout(retryTimeout); spinner.style.display="none"; if(retry<1) playChannel(i,retry+1); }
-
+    function onReady(){ clearTimeout(retryTimeout); setTimeout(hideSpinner,250); video.play().catch(err=>{console.error("Playback error:",err); if(retry<1) playChannel(i,retry+1);}); }
+    function onError(err){ console.error("Load failed:",err); clearTimeout(retryTimeout); hideSpinner(); if(retry<1) playChannel(i,retry+1); }
     retryTimeout=setTimeout(()=>{ console.warn("Retrying channel load..."); if(retry<1) playChannel(i,retry+1); },1000);
 
     if(ch.type==="hls"&&Hls.isSupported()){ hls=new Hls(); hls.loadSource(url); hls.attachMedia(video); hls.on(Hls.Events.MANIFEST_PARSED,()=>onReady()); hls.on(Hls.Events.ERROR,()=>onError()); }
@@ -591,7 +592,3 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
-
-
-
-
