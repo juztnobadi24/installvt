@@ -148,63 +148,6 @@ Promise.all([
 // (Keep your builtInChannels here - unchanged)
 // ==========================
 const builtInChannels = [
-  {
-    name: "Boomerang",
-    type: "hls",
-    manifestUri: "https://webhdrunns.mizhls.ru/lb/premium648/index.m3u8",
-    logo: "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/boomerang-us.png",
-    headers: {
-      Referer: "https://lewblivehdplay.ru/",
-      Origin: "https://lewblivehdplay.ru",
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"
-    }
-  },
-  {
-    name: "Disney Channel",
-    type: "hls",
-    manifestUri: "https://webhdrunns.mizhls.ru/lb/premium312/index.m3u8",
-    logo: "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-channel-us.png",
-    headers: {
-      Referer: "https://lewblivehdplay.ru/",
-      Origin: "https://lewblivehdplay.ru",
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"
-    }
-  },
-  {
-    name: "Discovery Channel",
-    type: "hls",
-    manifestUri: "https://webhdrunns.mizhls.ru/lb/premium313/index.m3u8",
-    logo: "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-channel-us.png",
-    headers: {
-      Referer: "https://lewblivehdplay.ru/",
-      Origin: "https://lewblivehdplay.ru",
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"
-    }
-  },
-  {
-    name: "Discovery Family",
-    type: "hls",
-    manifestUri: "https://webhdrunns.mizhls.ru/lb/premium657/index.m3u8",
-    logo: "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-family-us.png",
-    headers: {
-      Referer: "https://lewblivehdplay.ru/",
-      Origin: "https://lewblivehdplay.ru",
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"
-    }
-  },
-  {
-    name: "Disney XD",
-    type: "hls",
-    manifestUri: "https://webhdrunns.mizhls.ru/lb/premium314/index.m3u8",
-    logo: "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-xd-us.png",
-    headers: {
-      Referer: "https://lewblivehdplay.ru/",
-      Origin: "https://lewblivehdplay.ru",
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1"
-    }
-  },
-  // ... continue for HBO, Nick, Sports, Sky, etc.
-  
   { 
   name:"KAPAMILYA CHANNEL", 
   type:"dash", 
@@ -697,6 +640,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
