@@ -89,7 +89,7 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
   transform:translateX(-100%); opacity:0; transition:transform 0.4s, opacity 0.4s; z-index:1000;
 }
 #sidebar.open { transform:translateX(0); opacity:1; }
-#sidebarHeader { flex:0 0 auto; display:flex; flex-direction:column; gap:10px; padding:10px; box-sizing:border-box; background:#fec107; position:sticky; top:0; z-index:10; }
+#sidebarHeader { flex:0 0 auto; display:flex; flex-direction:column; gap:10px; padding:10px; box-sizing:border-box; background:#222; position:sticky; top:0; z-index:10; }
 #searchInput, #favoritesToggle { width: 100%; padding: 10px; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
 #searchInput { border: none; background: White; color: #111; }
 #searchInput::placeholder { color: #aaa; }
@@ -104,7 +104,7 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 .favorite-btn.active { color:gold; }
 
 #sidebarFooter {
-  flex:0 0 auto; padding:10px; background:#fec107; position:sticky; bottom:0; z-index:10;
+  flex:0 0 auto; padding:10px; background:#222; position:sticky; bottom:0; z-index:10;
 }
 #supportBtn { width:100%; padding:12px; border:none; border-radius:8px; font-size:14px; cursor:pointer; background:#007bff; color:white; font-weight:bold; }
 #supportBtn:hover { background:#0056b3; }
@@ -640,6 +640,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
