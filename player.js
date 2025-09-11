@@ -1,5 +1,6 @@
 // ==========================
-// IPTV Player Core (Spinner update - No Percentage, Smaller, Logo Color, Spinner stays spinning)
+// IPTV Player Core (Spinner does NOT restart spinning when changing channel/player)
+// TV Remote Channel +/- moves highlight in sidebar
 // ==========================
 document.body.innerHTML = `
 <div id="playerContainer">
@@ -117,12 +118,15 @@ body.hide-cursor { cursor:none; }
 #loadingSpinner { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2000; display:none; align-items:center; justify-content:center; color:white; }
 .spinner {
   border:4px solid rgba(255,255,255,0.18);
-  border-top:4px solid #fec107; /* Accent logo yellow */
+  border-top:4px solid #2e67e2; /* Primary logo blue */
+  border-right:4px solid #ffcc00; /* Accent logo yellow */
+  border-bottom:4px solid #2e67e2;
   border-radius:50%;
   width:48px;
   height:48px;
   animation:spin 1s linear infinite;
-  }
+  box-shadow:0 0 8px #2e67e255, 0 0 4px #ffcc0033;
+}
 @keyframes spin { 100% { transform:rotate(360deg);} }
 `;
 document.head.appendChild(style);
@@ -536,15 +540,19 @@ function initPlayer(){
   favoritesToggle.onclick=()=>{ showFavoritesOnly=!showFavoritesOnly; favoritesToggle.classList.toggle("active",showFavoritesOnly); renderChannels(); };
   searchInput.oninput=renderChannels;
 
-  function highlightChannel(i){ [...channelList.children].forEach((li,idx)=>li.classList.toggle("highlight",idx===i)); if(channelList.children[i]) channelList.children[i].scrollIntoView({block:"center",behavior:"smooth"}); }
+  function highlightChannel(i){ 
+    [...channelList.children].forEach((li,idx)=>li.classList.toggle("highlight",idx===i)); 
+    if(channelList.children[i]) channelList.children[i].scrollIntoView({block:"center",behavior:"smooth"});
+  }
 
-  // Playback with retry after 1s
+  // Spinner management: Never restart/recreate spinner element
   let spinnerVisible = false;
   function showSpinner() {
     if (!spinnerVisible) {
       spinner.style.display = "flex";
       spinnerVisible = true;
     }
+    // Do NOT reset/recreate spinner animation!
   }
   function hideSpinner() {
     if (spinnerVisible) {
@@ -553,6 +561,7 @@ function initPlayer(){
     }
   }
 
+  // Playback with retry after 1s
   function playChannel(i, retry=0){
     currentIndex=i; const ch=channels[i]; const url=ch.manifestUri;
     video.muted=false; highlightChannel(i);
@@ -572,22 +581,64 @@ function initPlayer(){
 
   function preloadChannel(i){ if(preloaded[i]) return; const ch=channels[i]; if(ch.type==="hls"&&Hls.isSupported()){ const dummy=document.createElement("video"),tmp=new Hls(); tmp.loadSource(ch.manifestUri); tmp.attachMedia(dummy); preloaded[i]={type:"hls",hls:tmp}; } else if(ch.type==="dash"){ const dummy=document.createElement("video"),tmp=new shaka.Player(dummy); if(ch.drm){ tmp.configure({drm:{clearKeys:ch.drm.keyIds}});} tmp.load(ch.manifestUri).catch(()=>{}); preloaded[i]={type:"shaka",shaka:tmp}; } else preloaded[i]={type:"native"}; }
 
-  function toggleSidebar(force){ if(force===true) sidebar.classList.add("open"); else if(force===false) sidebar.classList.remove("open"); else sidebar.classList.toggle("open"); if(sidebar.classList.contains("open")) highlightChannel(currentIndex); }
+  function toggleSidebar(force){ 
+    if(force===true) sidebar.classList.add("open"); 
+    else if(force===false) sidebar.classList.remove("open"); 
+    else sidebar.classList.toggle("open"); 
+    if(sidebar.classList.contains("open")) highlightChannel(currentIndex); 
+  }
   function toggleFullscreen(){ if(!document.fullscreenElement) container.requestFullscreen?.(); else document.exitFullscreen?.(); }
 
   overlay.onclick=()=>{ overlay.style.display="none"; overlayDismissed=true; playChannel(0); };
   container.onclick=(e)=>{ if(!overlayDismissed) return; if(e.detail===2){toggleFullscreen();return;} if(e.target.closest("#sidebar")) return; toggleSidebar(); };
 
-  // Key Controls
-  document.addEventListener("keydown",e=>{ const now=Date.now(); if(e.key==="Enter"){ if(now-lastEnterTime<300){toggleFullscreen();lastEnterTime=0;return;} lastEnterTime=now;
-      if(overlay.style.display!=="none"){ overlay.style.display="none"; overlayDismissed=true; playChannel(0); }
-      else if(sidebar.classList.contains("open")){ playChannel(currentIndex); toggleSidebar(false); }
-      else toggleSidebar(true); e.preventDefault(); }
-    if(sidebar.classList.contains("open")){ if(e.key==="ArrowDown"){currentIndex=(currentIndex+1)%channels.length;highlightChannel(currentIndex);} if(e.key==="ArrowUp"){currentIndex=(currentIndex-1+channels.length)%channels.length;highlightChannel(currentIndex);} }
-    else{ if(e.key==="PageDown"){currentIndex=(currentIndex+1)%channels.length;playChannel(currentIndex);} if(e.key==="PageUp"){currentIndex=(currentIndex-1+channels.length)%channels.length;playChannel(currentIndex);} }
+  // Key Controls (TV remote: Channel+/Channel- move highlight only in sidebar)
+  document.addEventListener("keydown",e=>{
+    const now=Date.now();
+    // Double Enter for fullscreen, single Enter for select/toggle
+    if(e.key==="Enter"){
+      if(now-lastEnterTime<300){
+        toggleFullscreen(); lastEnterTime=0; return;
+      }
+      lastEnterTime=now;
+      if(overlay.style.display!=="none"){
+        overlay.style.display="none"; overlayDismissed=true; playChannel(0);
+      }else if(sidebar.classList.contains("open")){
+        playChannel(currentIndex); toggleSidebar(false);
+      }else{
+        toggleSidebar(true);
+      }
+      e.preventDefault();
+    }
+
+    // TV remote channel keys
+    const channelUpKeys = ["ChannelUp","F21"];
+    const channelDownKeys = ["ChannelDown","F22"];
+
+    if(sidebar.classList.contains("open")){
+      // Move highlight only, do NOT play channel
+      if(e.key==="ArrowDown"||channelDownKeys.includes(e.key)){
+        currentIndex=(currentIndex+1)%channels.length; highlightChannel(currentIndex); e.preventDefault();
+      }
+      if(e.key==="ArrowUp"||channelUpKeys.includes(e.key)){
+        currentIndex=(currentIndex-1+channels.length)%channels.length; highlightChannel(currentIndex); e.preventDefault();
+      }
+    }else{
+      // PageUp/PageDown for direct playback change
+      if(e.key==="PageDown"){
+        currentIndex=(currentIndex+1)%channels.length; playChannel(currentIndex); e.preventDefault();
+      }
+      if(e.key==="PageUp"){
+        currentIndex=(currentIndex-1+channels.length)%channels.length; playChannel(currentIndex); e.preventDefault();
+      }
+    }
   });
 
-  document.addEventListener("mousemove",()=>{ document.body.classList.remove("hide-cursor"); clearTimeout(window.cursorTimeout); window.cursorTimeout=setTimeout(()=>document.body.classList.add("hide-cursor"),2000); });
+  document.addEventListener("mousemove",()=>{
+    document.body.classList.remove("hide-cursor");
+    clearTimeout(window.cursorTimeout);
+    window.cursorTimeout=setTimeout(()=>document.body.classList.add("hide-cursor"),2000);
+  });
   video.addEventListener("pause",()=>{ if(document.fullscreenElement) video.play(); });
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
