@@ -99,7 +99,7 @@ html, body { margin:0; padding:0; width:100%; height:100%; background:black; fon
 #channelList { flex:1; overflow-y:auto; list-style:none; padding:0; margin:0; }
 #channelList li { display:flex; justify-content:space-between; align-items:center; padding:12px 10px; cursor:pointer; border-bottom:1px solid rgba(255,255,255,0.1); }
 #channelList li:hover { background: rgba(255,255,255,0.2); }
-#channelList li.highlight { background:#28a745; color:white; font-weight:600; }
+#channelList li.highlight { background:#fec009; color:black; font-weight:600; }
 .favorite-btn { margin-left:10px; cursor:pointer; }
 .favorite-btn.active { color:gold; }
 
@@ -640,6 +640,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
