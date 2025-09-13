@@ -349,6 +349,11 @@ const builtInChannels = [
     manifestUri: "https://dbrb49pjoymg4.cloudfront.net/10001/99991348/hls/master.m3u8?includeAssetTags=true&ads.xumo_channelId=99991348&ads._fw_ifa_type=dpid&ads._fw_did=413d7e29-b63e-b34e-b143-bf0efe32f394&ads.amznappId=[AMZN_APP_ID]&ads.lat=[LAT]&ads.lon=[LON]&ads.os=[OS]&ads.osv=[OS_VERSION]&ads.asnw=&ads.caid=Kocowa&ads.csid=xumo_desktopweb_Kocowa_ssai&ads._fw_is_lat=0&ads._fw_us_privacy=1YNN&ads._fw_coppa=0&ads.genre=Action%2CAdventure%2CComedy%2CCrime%2CDrama%2CFamily%2CFantasy%2CHorror%2CMystery%2CRomance%2CSci-Fi%2CThriller%2CWar%2CWestern%2CSuperhero&ads._fw_content_category=IAB1-7&ads._fw_content_language=undefined&ads._fw_content_genre=International&ads._fw_content_rating=TV-14&ads.xumo_contentId=285&ads.xumo_contentName=Kocowa&ads.xumo_providerId=285&ads.xumo_providerName=Kocowa&ads._fw_deviceMake=&ads._fw_device_model=&ads.channelId=99991348&ads.xumo_platform=desktopweb&ads.site_id=26840&ads.appName=xumo&ads.appVersion=2.18.0&ads._fw_app_bundle=&ads._fw_app_store_url=&ads.site_name=XumoPlay&ads.site_page=https%253A%252F%252Fplay.xumo.com"
   },
    {
+    name: "Samsung Movies",
+    type: "hls",
+    manifestUri: "https://bd281c27a16f4a7fb4a88260378e8082.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/Samsung_NewMovies/playlist.m3u8"
+  },
+   {
     name: "WILD EARTH",
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/wildearth/master.m3u8"
@@ -357,6 +362,11 @@ const builtInChannels = [
     name: "National Geographic Wild",
     type: "hls",
     manifestUri: "https://amg00426-littledotstudio-realwildnz-samsungnz-wz0bm.amagi.tv/playlist/amg00426-littledotstudio-realwildnz-samsungnz/playlist.m3u8"
+  },
+   {
+    name: "REAL WILD",
+    type: "hls",
+    manifestUri: "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00426-littledotstudio-realwild-tcl/playlist.m3u8"
   },
    {
     name: "DISCOVERY TURBO",
@@ -432,6 +442,16 @@ const builtInChannels = [
     name: "Moviews Action",
     type: "hls",
     manifestUri: "https://shls-live-ak.akamaized.net/out/v1/46079e838e65490c8299f902a7731168/index.m3u8"
+  },
+   {
+    name: "GRAND CINEMA",
+    type: "hls",
+    manifestUri: "https://gcinemahls.wns.live/hls/stream.m3u8"
+  },
+   {
+    name: "MIRAMAX",
+    type: "hls",
+    manifestUri: "https://linear-798.frequency.stream/mt/plex/798/hls/master/playlist.m3u8"
   },
   { 
     name:"CNN HD", 
@@ -860,6 +880,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
