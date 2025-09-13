@@ -245,6 +245,22 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://f571e8a90f1d4af7b0538a225ebf9b62.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/LG-ca_KidsTV/playlist.m3u8"
   },
+   { name: "Star TV Ph", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-208168/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Dreamstar TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-10410/tracks-v1a1/mono.ts.m3u8" },
+  { name: "StartimesPh", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210171/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Dream TV Ph", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-209574/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Highlights TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-208173/tracks-v1a1/mono.ts.m3u8" },
+  { name: "3rs Movie", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210273/tracks-v1a1/mono.ts.m3u8" },
+  { name: "3rs TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210267/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Sine 3rs", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210291/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Atbs", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/goodpower/playlist.m3u8" },
+  { name: "Alltv2", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/alltv2/playlist.m3u8" },
+  { name: "Abante", type: "hls", manifestUri: "https://amg19223-amg19223c12-amgplt0352.playout.now3.amagi.tv/playlist/amg19223-amg19223c12-amgplt0352/playlist.m3u8" },
+  { name: "Jpv Teleradio", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/jpvradio/playlist.m3u8" },
+  { name: "Newflix", type: "hls", manifestUri: "https://newfhls.wns.live/hls/stream.m3u8" },
+  { name: "Home Plus", type: "hls", manifestUri: "https://homeplushls.wns.live/hls/stream.m3u8" },
+  { name: "Ifilm", type: "hls", manifestUri: "https://live.presstv.ir/hls/ifilmen_4_482/index.m3u8" },
+  { name: "Meta Film TV", type: "hls", manifestUri: "https://metafilmhls.wns.live/hls/stream.m3u8" },
   { 
     name:"AXN", 
     type:"dash", 
@@ -656,6 +672,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
