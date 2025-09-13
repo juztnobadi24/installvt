@@ -541,10 +541,39 @@ const builtInChannels = [
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/kix_hd1.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "a8d5712967cd495ca80fdc425bc61d6b":"f248c29525ed4c40cc39baeee9634735" } }
   },
+  { 
+    name:"SPOTV HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/cg_spotvhd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "ec7ee27d83764e4b845c48cca31c8eef":"9c0e4191203fccb0fde34ee29999129e" } }
+  },
+  { 
+    name:"SPOTV 2 HD", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_spotv2hd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "7eea72d6075245a99ee3255603d58853":"6848ef60575579bf4d415db1032153ed" } }
+  },
+  { 
+    name:"TV Maria", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/tvmaria_prd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "fa3998b9a4de40659725ebc5151250d6":"998f1294b122bbf1a96c1ddc0cbb229f" } }
+  },
+  { 
+    name:"Lotus Macau", 
+    type:"dash", 
+    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/lotusmacau_prd.mpd", 
+    drm:{ type:"org.w3.clearkey", keyIds:{ "60dc692e64ea443a8fb5ac186c865a9b":"01bdbe22d59b2a4504b53adc2f606cc1" } }
+  },
    {
     name: "AMC Thrillers",
     type: "hls",
     manifestUri: "https://amc-rushbyamc-1-us.vizio.wurl.tv/playlist.m3u8"
+  },
+   {
+    name: "RAGE TV",
+    type: "hls",
+    manifestUri: "https://live20.bozztv.com/giatv/giatv-ragetv/ragetv/chunks.m3u8"
   },
   { 
     name:"Thrill SD", 
@@ -572,30 +601,6 @@ const builtInChannels = [
     name: "Xite Hits",
     type: "hls",
     manifestUri: "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8"
-  },
-  { 
-    name:"SPOTV HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/cg_spotvhd.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "ec7ee27d83764e4b845c48cca31c8eef":"9c0e4191203fccb0fde34ee29999129e" } }
-  },
-  { 
-    name:"SPOTV 2 HD", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_spotv2hd.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "7eea72d6075245a99ee3255603d58853":"6848ef60575579bf4d415db1032153ed" } }
-  },
-  { 
-    name:"TV Maria", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/tvmaria_prd.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "fa3998b9a4de40659725ebc5151250d6":"998f1294b122bbf1a96c1ddc0cbb229f" } }
-  },
-  { 
-    name:"Lotus Macau", 
-    type:"dash", 
-    manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/lotusmacau_prd.mpd", 
-    drm:{ type:"org.w3.clearkey", keyIds:{ "60dc692e64ea443a8fb5ac186c865a9b":"01bdbe22d59b2a4504b53adc2f606cc1" } }
   },
   { 
     name:"Premier Sports HD", 
@@ -880,6 +885,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
