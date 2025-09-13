@@ -334,6 +334,16 @@ const builtInChannels = [
     manifestUri: "https://4df655f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfUm9tQ29tS0RyYW1hX0hMUw/playlist.m3u8"
   },
    {
+    name: "Redbox Movies",
+    type: "hls",
+    manifestUri: "https://7732c5436342497882363a8cd14ceff4.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/Plex_NewMovies/playlist.m3u8"
+  },
+   {
+    name: "KOCOWA",
+    type: "hls",
+    manifestUri: "https://dbrb49pjoymg4.cloudfront.net/10001/99991348/hls/master.m3u8?includeAssetTags=true&ads.xumo_channelId=99991348&ads._fw_ifa_type=dpid&ads._fw_did=413d7e29-b63e-b34e-b143-bf0efe32f394&ads.amznappId=[AMZN_APP_ID]&ads.lat=[LAT]&ads.lon=[LON]&ads.os=[OS]&ads.osv=[OS_VERSION]&ads.asnw=&ads.caid=Kocowa&ads.csid=xumo_desktopweb_Kocowa_ssai&ads._fw_is_lat=0&ads._fw_us_privacy=1YNN&ads._fw_coppa=0&ads.genre=Action%2CAdventure%2CComedy%2CCrime%2CDrama%2CFamily%2CFantasy%2CHorror%2CMystery%2CRomance%2CSci-Fi%2CThriller%2CWar%2CWestern%2CSuperhero&ads._fw_content_category=IAB1-7&ads._fw_content_language=undefined&ads._fw_content_genre=International&ads._fw_content_rating=TV-14&ads.xumo_contentId=285&ads.xumo_contentName=Kocowa&ads.xumo_providerId=285&ads.xumo_providerName=Kocowa&ads._fw_deviceMake=&ads._fw_device_model=&ads.channelId=99991348&ads.xumo_platform=desktopweb&ads.site_id=26840&ads.appName=xumo&ads.appVersion=2.18.0&ads._fw_app_bundle=&ads._fw_app_store_url=&ads.site_name=XumoPlay&ads.site_page=https%253A%252F%252Fplay.xumo.com"
+  },
+   {
     name: "WILD EARTH",
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/wildearth/master.m3u8"
@@ -353,6 +363,11 @@ const builtInChannels = [
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_axn_sd.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "fd5d928f5d974ca4983f6e9295dfe410":"3aaa001ddc142fedbb9d5557be43792f" } }
+  },
+  {
+    name: "MHz",
+    type: "hls",
+    manifestUri: "https://mhz-samsung-linear-ca.samsung.wurl.tv/playlist.m3u8"
   },
   { 
     name:"Lifetime SD", 
@@ -407,6 +422,11 @@ const builtInChannels = [
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_tapactionflix_hd1.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "bee1066160c0424696d9bf99ca0645e3":"f5b72bf3b89b9848de5616f37de040b7" } }
+  },
+   {
+    name: "Moviews Action",
+    type: "hls",
+    manifestUri: "https://shls-live-ak.akamaized.net/out/v1/46079e838e65490c8299f902a7731168/index.m3u8"
   },
   { 
     name:"CNN HD", 
@@ -485,17 +505,32 @@ const builtInChannels = [
     manifestUri:"https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_nickjr.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "bab5c11178b646749fbae87962bf5113":"0ac679aad3b9d619ac39ad634ec76bc8" } }
   },
+   {
+    name: "Cartoonito",
+    type: "hls",
+    manifestUri: "https://cdn4.skygo.mn/live/disk1/Boomerang/HLSv3-FTA/Boomerang.m3u8"
+  },
   { 
     name:"Kix HD", 
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/kix_hd1.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "a8d5712967cd495ca80fdc425bc61d6b":"f248c29525ed4c40cc39baeee9634735" } }
   },
+   {
+    name: "AMC Thrillers",
+    type: "hls",
+    manifestUri: "https://amc-rushbyamc-1-us.vizio.wurl.tv/playlist.m3u8"
+  },
   { 
     name:"Thrill SD", 
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_thrill_sd.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "928114ffb2394d14b5585258f70ed183":"a82edc340bc73447bac16cdfed0a4c62" } }
+  },
+   {
+    name: "Screamflix",
+    type: "hls",
+    manifestUri: "https://jungotvstream.chanall.tv/jungotv/screamflix/stream.m3u8"
   },
   {
     name: "ROCK ENTERTAINMENT *",
@@ -512,11 +547,6 @@ const builtInChannels = [
     name: "Xite Hits",
     type: "hls",
     manifestUri: "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8"
-  },
-   {
-    name: "AMC Thrillers",
-    type: "hls",
-    manifestUri: "https://amc-rushbyamc-1-us.vizio.wurl.tv/playlist.m3u8"
   },
   { 
     name:"SPOTV HD", 
@@ -825,6 +855,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
