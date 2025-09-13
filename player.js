@@ -309,6 +309,17 @@ const builtInChannels = [
     drm:{ type:"org.w3.clearkey", keyIds:{ "d39eb201ae494a0b98583df4d110e8dd":"6797066880d344422abd3f5eda41f45f" } }
   },
   { 
+    name: "Disney Channel",
+    type: "dash",
+    manifestUri: "https://ottb.live.cf.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/zuf794yutz/out/v1/ca3534bfe4f148298b36719204d108e0/cenc.mpd",
+    drm: {
+      type: "org.w3.clearkey",
+      keyIds: {
+        "be9caaa813c5305e761c66ac63645901": "3d40f2990ec5362ca5be3a3c9bb8f8b4"
+      }
+    }
+  },
+  { 
     name:"Nickelodeon SD", 
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_nickelodeon.mpd", 
@@ -417,16 +428,6 @@ const builtInChannels = [
       type:"org.w3.clearkey", 
       keyIds:{ "4ab9645a2a0a47edbd65e8479c2b9669":"8cb209f1828431ce9b50b593d1f44079" } 
     } 
-  },
-
-  // ==========================
-  // New Channels
-  // ==========================
-  { 
-    name:"Disney Channel", 
-    type:"hls", 
-    logo:"https://i.imgur.com/NVRbZfJ.png", 
-    manifestUri:"https://disney-channel.13l.link/live/Disney/index.m3u8" 
   },
   { 
     name:"A2Z", 
@@ -640,6 +641,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
