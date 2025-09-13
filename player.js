@@ -296,6 +296,11 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/discoveryscience/master.m3u8"
   },
+    {
+    name: "ASIANCRUSH",
+    type: "hls",
+    manifestUri: "https://cineverse.g-mana.live/media/1ebfbe30-c35c-4404-8bc5-0339d750eb58/profile/0/profileManifest.m3u8?_uid=5de4a899-873c-4992-8f77-61bea7a21e8f&rK=an&_did=7f31da621fda114b61e651f80c416ee4f91aa17f"
+  },
  {
     name: "K+",
     type: "dash",
@@ -318,15 +323,15 @@ const builtInChannels = [
       }
     }
   },
+   {
+    name: "New K Movies",
+    type: "hls",
+    manifestUri: "https://7732c5436342497882363a8cd14ceff4.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/Plex_NewMovies/playlist.m3u8"
+  },
    { 
     name: "Romkom K Drama",
     type: "hls",
     manifestUri: "https://4df655f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfUm9tQ29tS0RyYW1hX0hMUw/playlist.m3u8"
-  },
-   {
-    name: "ASIANCRUSH",
-    type: "hls",
-    manifestUri: "https://cineverse.g-mana.live/media/1ebfbe30-c35c-4404-8bc5-0339d750eb58/profile/0/profileManifest.m3u8?_uid=5de4a899-873c-4992-8f77-61bea7a21e8f&rK=an&_did=7f31da621fda114b61e651f80c416ee4f91aa17f"
   },
    {
     name: "WILD EARTH",
@@ -492,6 +497,27 @@ const builtInChannels = [
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_thrill_sd.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "928114ffb2394d14b5585258f70ed183":"a82edc340bc73447bac16cdfed0a4c62" } }
   },
+  {
+    name: "ROCK ENTERTAINMENT *",
+    type: "dash",
+    manifestUri: "https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_rockentertainment.mpd",
+    drm: {
+      type: "org.w3.clearkey",
+      keyIds: {
+        "e4ee0cf8ca9746f99af402ca6eed8dc7": "be2a096403346bc1d0bb0f812822bb62"
+      }
+    }
+  },
+   {
+    name: "Xite Hits",
+    type: "hls",
+    manifestUri: "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8"
+  },
+   {
+    name: "AMC Thrillers",
+    type: "hls",
+    manifestUri: "https://amc-rushbyamc-1-us.vizio.wurl.tv/playlist.m3u8"
+  },
   { 
     name:"SPOTV HD", 
     type:"dash", 
@@ -550,6 +576,16 @@ const builtInChannels = [
       type:"org.w3.clearkey", 
       keyIds:{ "f703e4c8ec9041eeb5028ab4248fa094":"c22f2162e176eee6273a5d0b68d19530" } 
     } 
+  },
+   {
+    name: "AVA Family",
+    type: "hls",
+    manifestUri: "https://familyhls.avatv.live/hls/stream.m3u8"
+  },
+  {
+    name: "AVA Series",
+    type: "hls",
+    manifestUri: "https://avaserieshls.wns.live/hls/stream.m3u8"
   },
   { 
     name:"One Sports HD", 
@@ -789,6 +825,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
