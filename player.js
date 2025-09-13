@@ -230,6 +230,11 @@ const builtInChannels = [
       keyIds:{ "edf1a715de9748638dd2fad75a419af2":"2f5a3199b26e9b693ae881af7ff864cf" } 
     } 
   },
+   { 
+    name: "Crunchyroll",
+    type: "hls",
+    manifestUri: "https://8846385a.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfQ3J1bmNoeXJvbGxfSExT/playlist.m3u8"
+  },
   { 
     name:"AXN", 
     type:"dash", 
@@ -641,6 +646,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
