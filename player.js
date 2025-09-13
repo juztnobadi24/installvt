@@ -271,6 +271,11 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/bravetv/master.m3u8"
   },
+   {
+    name: "SCI FI WORLD",
+    type: "hls",
+    manifestUri: "https://streams2.sofast.tv/ptnr-yupptv/title-SCIFI-WORLD-ENG_yupptv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/a985e052-6868-4365-ac45-52afe9008b25/manifest.m3u8"
+  },
   { 
     name: "TLC",
     type: "hls",
@@ -855,6 +860,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
