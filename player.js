@@ -261,6 +261,56 @@ const builtInChannels = [
   { name: "Home Plus", type: "hls", manifestUri: "https://homeplushls.wns.live/hls/stream.m3u8" },
   { name: "Ifilm", type: "hls", manifestUri: "https://live.presstv.ir/hls/ifilmen_4_482/index.m3u8" },
   { name: "Meta Film TV", type: "hls", manifestUri: "https://metafilmhls.wns.live/hls/stream.m3u8" },
+   { 
+    name: "PARAMOUNT",
+    type: "mpd",
+    manifestUri: "https://viamotionhsi.netplus.ch/live/eds/paramount/browser-dash/paramount.mpd"
+  },
+  { 
+    name: "COLORS INFINITY HD",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/colorsinfinityhd/master.m3u8"
+  },
+  { 
+    name: "COLORS INFINITY SD",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/colorsinfinitysd/master.m3u8"
+  },
+  { 
+    name: "BRAVE TV",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/bravetv/master.m3u8"
+  },
+  { 
+    name: "TLC",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/tlchd/master.m3u8"
+  },
+  { 
+    name: "TLC ENG.",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/tlcenglish/master.m3u8"
+  },
+  { 
+    name: "ANIMAL PLANET",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/animalplanethdworld/master.m3u8"
+  },
+  { 
+    name: "DISCOVERY HD WORLD",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/discoveryhdworld/master.m3u8"
+  },
+  { 
+    name: "DISCOVERY SCIENCE",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/discoveryscience/master.m3u8"
+  },
+  { 
+    name: "HBO COMEDY",
+    type: "hls",
+    manifestUri: "https://fl3.moveonjoy.com/HBO_COMEDY/index.m3u8"
+  },
   { 
     name:"AXN", 
     type:"dash", 
@@ -707,6 +757,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
