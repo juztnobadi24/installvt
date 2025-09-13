@@ -235,11 +235,6 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://8846385a.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfQ3J1bmNoeXJvbGxfSExT/playlist.m3u8"
   },
-   { 
-    name: "Romkom K Drama",
-    type: "hls",
-    manifestUri: "https://4df655f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfUm9tQ29tS0RyYW1hX0hMUw/playlist.m3u8"
-  },
   { 
     name: "Kids TV",
     type: "hls",
@@ -323,10 +318,10 @@ const builtInChannels = [
       }
     }
   },
-   {
-    name: "National Geographic Wild",
+   { 
+    name: "Romkom K Drama",
     type: "hls",
-    manifestUri: "https://amg00426-littledotstudio-realwildnz-samsungnz-wz0bm.amagi.tv/playlist/amg00426-littledotstudio-realwildnz-samsungnz/playlist.m3u8"
+    manifestUri: "https://4df655f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfUm9tQ29tS0RyYW1hX0hMUw/playlist.m3u8"
   },
    {
     name: "ASIANCRUSH",
@@ -337,6 +332,11 @@ const builtInChannels = [
     name: "WILD EARTH",
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/wildearth/master.m3u8"
+  },
+   {
+    name: "National Geographic Wild",
+    type: "hls",
+    manifestUri: "https://amg00426-littledotstudio-realwildnz-samsungnz-wz0bm.amagi.tv/playlist/amg00426-littledotstudio-realwildnz-samsungnz/playlist.m3u8"
   },
    {
     name: "DISCOVERY TURBO",
@@ -789,6 +789,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
