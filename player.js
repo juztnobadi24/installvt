@@ -504,6 +504,41 @@ const builtInChannels = [
       type:"org.w3.clearkey", 
       keyIds:{ "4503cf86bca3494ab95a77ed913619a0":"afc9c8f627fb3fb255dee8e3b0fe1d71" } 
     } 
+  },
+   { 
+    name: "Newsmax N1",
+    type: "hls",
+    manifestUri: "https://amg00217-newsmax-amg00217c2-lg-ca-4271.playouts.now.amagi.tv/playlist/amg00217-newsmaxmediafast-newsmaxn1-lgca/playlist.m3u8?ads.deviceid=[DEVICE_ID]&ads.ifa=[IFA]&ads.ifatype=[IFA_TYPE]&ads.lat=[LMT]&ads.donotsell=[DNS]&ads.ua=[UA]&ads.ip=[IP]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.country=[COUNTRY]&ads.usprivacy=[US_PRIVACY]&ads.appstoreurl=[APP_STOREURL]&ads.bundleid=[APP_BUNDLE]&ads.appname=[APP_NAME]&ads.appversion=[APP_VERSION]&ads.devicetype=[DEVICE_TYPE]&ads.devicemake=[DEVICE_MAKE]&ads.devicemodel=[DEVICE_MODEL]&ads.targetad=[TARGETAD_ALLOWED]"
+  },
+  { 
+    name: "Master Chef",
+    type: "hls",
+    manifestUri: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00627-banijaygroup-masterchefuk-lgca/playlist.m3u8?ads.deviceid=[DEVICE_ID]&ads.ifa=[IFA]&ads.ifatype=[IFA_TYPE]&ads.lat=[LMT]&ads.donotsell=[DNS]&ads.ua=[UA]&ads.ip=[IP]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.country=[COUNTRY]&ads.usprivacy=[US_PRIVACY]&ads.appstoreurl=[APP_STOREURL]&ads.bundleid=[APP_BUNDLE]&ads.appname=[APP_NAME]&ads.appversion=[APP_VERSION]&ads.devicetype=[DEVICE_TYPE]&ads.devicemake=[DEVICE_MAKE]&ads.devicemodel=[DEVICE_MODEL]&ads.coppa=0&ads.targetad=[TARGETAD_ALLOWED]"
+  },
+  { 
+    name: "Declassified",
+    type: "hls",
+    manifestUri: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00090-blueantllc-historytime-lgca/playlist.m3u8?ads.deviceid=[DEVICE_ID]&ads.ifa=[IFA]&ads.ifatype=[IFA_TYPE]&ads.lat=[LMT]&ads.donotsell=[DNS]&ads.ua=[UA]&ads.ip=[IP]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.country=[COUNTRY]&ads.usprivacy=[US_PRIVACY]&ads.appstoreurl=[APP_STOREURL]&ads.bundleid=[APP_BUNDLE]&ads.appname=[APP_NAME]&ads.appversion=[APP_VERSION]&ads.devicetype=[DEVICE_TYPE]&ads.devicemake=[DEVICE_MAKE]&ads.devicemodel=[DEVICE_MODEL]&ads.coppa=0&ads.targetad=[TARGETAD_ALLOWED]"
+  },
+  { 
+    name: "Game Show Central",
+    type: "hls",
+    manifestUri: "https://87755b6e.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfR2FtZVNob3dDZW50cmFsLTFfSExT/playlist.m3u8"
+  },
+  { 
+    name: "NBC News Now",
+    type: "hls",
+    manifestUri: "https://d4whmvwm0rdvi.cloudfront.net/10007/99992212/hls/master.m3u8?ads.xumo_channelId=99992212&ads.asnw=169843&ads.afid=137704898&ads.sfid=16373024&ads.csid=lgchannels_us_nbcnewsnow_ssai_cro&ads._fw_is_lat=[LMT]&ads._fw_us_privacy=[US_PRIVACY]&ads._fw_coppa=0&ads._fw_did=[IFA]&ads._fw_vcid2=512116:[IFA]&ads._fw_app_bundle=[APP_BUNDLE]&ads._fw_app_store_url=[APP_STOREURL]&ads._fw_content_category=IAB12&ads._fw_content_genre=News&ads._fw_content_language=en&ads._fw_content_rating=&ads._fw_deviceMake=[DEVICE_MAKE]&ads._fw_device_model=[DEVICE_MODEL]&ads._fw_deviceType=3-Connected_TV&ads.appVersion=[APP_VERSION]&ads.appName=lgchannels&ads.xumo_contentId=1828&ads.xumo_contentName=NBCNewsNOW&ads.xumo_providerId=1828&ads.xumo_providerName=NBCNewsNOW&ads.channelId=99992212&ads._fw_ifa_type=dpid&ads.fck=[FCK]&ads.viewsize=[VIEWSIZE]&ads.givn=[NONCE]"
+  },
+  { 
+    name: "Universal Action",
+    type: "hls",
+    manifestUri: "https://d4whmvwm0rdvi.cloudfront.net/10007/99993045/hls/master.m3u8?ads.xumo_channelId=99993045&ads.asnw=169843&ads.afid=380748649&ads.sfid=17668004&ads.csid=lgchannels_us_nbcuuniversalaction_ssai_cro&ads._fw_is_lat=[LMT]&ads._fw_us_privacy=[US_PRIVACY]&ads._fw_coppa=0&ads._fw_did=[IFA]&ads._fw_vcid2=512116:[IFA]&ads._fw_app_bundle=[APP_BUNDLE]&ads._fw_app_store_url=[APP_STOREURL]&ads._fw_content_category=IAB1-7&ads._fw_content_genre=television&ads._fw_content_language=en&ads._fw_content_rating=tv-14&ads._fw_deviceMake=[DEVICE_MAKE]&ads._fw_device_model=[DEVICE_MODEL]&ads._fw_deviceType=3-Connected_TV&ads.appVersion=[APP_VERSION]&ads.appName=lgchannels&ads.xumo_contentId=3948&ads.xumo_contentName=NBCUUniversalAction&ads.xumo_providerId=3948&ads.xumo_providerName=NBCUUniversalAction&ads.channelId=99993045&ads._fw_ifa_type=dpid"
+  },
+  { 
+    name: "Movie Favorites by Lifetime",
+    type: "hls",
+    manifestUri: "https://33ce6dcb.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEdfSG9saWRheU1vdmllRmF2b3JpdGVzYnlMaWZldGltZV9ITFM/playlist.m3u8"
   }
 ];
 // ==========================
@@ -672,6 +707,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
