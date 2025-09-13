@@ -272,11 +272,6 @@ const builtInChannels = [
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/colorsinfinityhd/master.m3u8"
   },
   { 
-    name: "COLORS INFINITY SD",
-    type: "hls",
-    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/colorsinfinitysd/master.m3u8"
-  },
-  { 
     name: "BRAVE TV",
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/bravetv/master.m3u8"
@@ -306,10 +301,47 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://live.dinesh29.com.np/stream/jiotv/discoveryscience/master.m3u8"
   },
-  { 
-    name: "HBO COMEDY",
+ {
+    name: "K+",
+    type: "dash",
+    manifestUri: "https://linearjitp-playback.astro.com.my/dash-wv/linear/9983/default_ott.mpd",
+    drm: {
+      type: "org.w3.clearkey",
+      keyIds: {
+        "aa48b28bd723f91214887df6ed9fad10": "b5a3a800848120c843ae0fa68c09c261"
+      }
+    }
+  },
+    {
+    name: "KBS World",
+    type: "dash",
+    manifestUri: "https://linearjitp-playback.astro.com.my/dash-wv/linear/2306/default_ott.mpd",
+    drm: {
+      type: "org.w3.clearkey",
+      keyIds: {
+        "692950d39869c92af9a9ddea453c0d10": "eadc626ab959255f7ab881c03d306fe2"
+      }
+    }
+  },
+   {
+    name: "National Geographic Wild",
     type: "hls",
-    manifestUri: "https://fl3.moveonjoy.com/HBO_COMEDY/index.m3u8"
+    manifestUri: "https://amg00426-littledotstudio-realwildnz-samsungnz-wz0bm.amagi.tv/playlist/amg00426-littledotstudio-realwildnz-samsungnz/playlist.m3u8"
+  },
+   {
+    name: "ASIANCRUSH",
+    type: "hls",
+    manifestUri: "https://cineverse.g-mana.live/media/1ebfbe30-c35c-4404-8bc5-0339d750eb58/profile/0/profileManifest.m3u8?_uid=5de4a899-873c-4992-8f77-61bea7a21e8f&rK=an&_did=7f31da621fda114b61e651f80c416ee4f91aa17f"
+  },
+   {
+    name: "WILD EARTH",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/wildearth/master.m3u8"
+  },
+   {
+    name: "DISCOVERY TURBO",
+    type: "hls",
+    manifestUri: "https://live.dinesh29.com.np/stream/jiotv/discoveryturbo/master.m3u8"
   },
   { 
     name:"AXN", 
@@ -757,6 +789,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
