@@ -235,6 +235,16 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://8846385a.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfQ3J1bmNoeXJvbGxfSExT/playlist.m3u8"
   },
+   { 
+    name: "Romkom K Drama",
+    type: "hls",
+    manifestUri: "https://4df655f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfUm9tQ29tS0RyYW1hX0hMUw/playlist.m3u8"
+  },
+  { 
+    name: "Kids TV",
+    type: "hls",
+    manifestUri: "https://f571e8a90f1d4af7b0538a225ebf9b62.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/LG-ca_KidsTV/playlist.m3u8"
+  },
   { 
     name:"AXN", 
     type:"dash", 
@@ -646,6 +656,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
