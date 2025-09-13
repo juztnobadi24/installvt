@@ -175,6 +175,11 @@ const builtInChannels = [
     keyIds:{ "58d0e56991194043b8fb82feb4db7276":"d68f41b59649676788889e19fb10d22c" } 
   } 
 },
+  {
+    name: "ABN Bible Movies",
+    type: "hls",
+    manifestUri: "https://mediaserver.abnvideos.com/streams/abnbiblemovies.m3u8"
+  },
   { 
     name:"NBA TV Philippines", 
     type:"dash", 
@@ -220,6 +225,27 @@ const builtInChannels = [
     manifestUri:"https://qp-pldt-live-grp-07-prod.akamaized.net/out/u/cg_tagalogmovie.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "96701d297d1241e492d41c397631d857":"ca2931211c1a261f082a3a2c4fd9f91b" } }
   },
+   {
+    name: "SINEMANILA",
+    type: "hls",
+    manifestUri: "https://live20.bozztv.com/giatv/giatv-sinemanila/sinemanila/chunks.m3u8"
+  },
+   { name: "Star TV Ph", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-208168/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Dreamstar TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-10410/tracks-v1a1/mono.ts.m3u8" },
+  { name: "StartimesPh", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210171/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Dream TV Ph", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-209574/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Highlights TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-208173/tracks-v1a1/mono.ts.m3u8" },
+  { name: "3rs Movie", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210273/tracks-v1a1/mono.ts.m3u8" },
+  { name: "3rs TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210267/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Sine 3rs", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210291/tracks-v1a1/mono.ts.m3u8" },
+  { name: "Atbs", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/goodpower/playlist.m3u8" },
+  { name: "Alltv2", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/alltv2/playlist.m3u8" },
+  { name: "Abante", type: "hls", manifestUri: "https://amg19223-amg19223c12-amgplt0352.playout.now3.amagi.tv/playlist/amg19223-amg19223c12-amgplt0352/playlist.m3u8" },
+  { name: "Jpv Teleradio", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/jpvradio/playlist.m3u8" },
+  { name: "Newflix", type: "hls", manifestUri: "https://newfhls.wns.live/hls/stream.m3u8" },
+  { name: "Home Plus", type: "hls", manifestUri: "https://homeplushls.wns.live/hls/stream.m3u8" },
+  { name: "Ifilm", type: "hls", manifestUri: "https://live.presstv.ir/hls/ifilmen_4_482/index.m3u8" },
+  { name: "Meta Film TV", type: "hls", manifestUri: "https://metafilmhls.wns.live/hls/stream.m3u8" },
   { 
     name:"Animax", 
     type:"dash", 
@@ -240,22 +266,7 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://f571e8a90f1d4af7b0538a225ebf9b62.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/LG-ca_KidsTV/playlist.m3u8"
   },
-   { name: "Star TV Ph", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-208168/tracks-v1a1/mono.ts.m3u8" },
-  { name: "Dreamstar TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-10410/tracks-v1a1/mono.ts.m3u8" },
-  { name: "StartimesPh", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210171/tracks-v1a1/mono.ts.m3u8" },
-  { name: "Dream TV Ph", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-209574/tracks-v1a1/mono.ts.m3u8" },
-  { name: "Highlights TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-208173/tracks-v1a1/mono.ts.m3u8" },
-  { name: "3rs Movie", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210273/tracks-v1a1/mono.ts.m3u8" },
-  { name: "3rs TV", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210267/tracks-v1a1/mono.ts.m3u8" },
-  { name: "Sine 3rs", type: "hls", manifestUri: "https://live20.bozztv.com/giatvplayout7/giatv-210291/tracks-v1a1/mono.ts.m3u8" },
-  { name: "Atbs", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/goodpower/playlist.m3u8" },
-  { name: "Alltv2", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/alltv2/playlist.m3u8" },
-  { name: "Abante", type: "hls", manifestUri: "https://amg19223-amg19223c12-amgplt0352.playout.now3.amagi.tv/playlist/amg19223-amg19223c12-amgplt0352/playlist.m3u8" },
-  { name: "Jpv Teleradio", type: "hls", manifestUri: "https://live20.bozztv.com/akamaissh101/ssh101/jpvradio/playlist.m3u8" },
-  { name: "Newflix", type: "hls", manifestUri: "https://newfhls.wns.live/hls/stream.m3u8" },
-  { name: "Home Plus", type: "hls", manifestUri: "https://homeplushls.wns.live/hls/stream.m3u8" },
-  { name: "Ifilm", type: "hls", manifestUri: "https://live.presstv.ir/hls/ifilmen_4_482/index.m3u8" },
-  { name: "Meta Film TV", type: "hls", manifestUri: "https://metafilmhls.wns.live/hls/stream.m3u8" },
+  
    { 
     name: "PARAMOUNT",
     type: "mpd",
@@ -339,6 +350,11 @@ const builtInChannels = [
     manifestUri: "https://4df655f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctY2FfUm9tQ29tS0RyYW1hX0hMUw/playlist.m3u8"
   },
    {
+    name: "MOVIES PLUS",
+    type: "hls",
+    manifestUri: "https://bd281c27a16f4a7fb4a88260378e8082.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/Samsung_NewMovies/playlist.m3u8"
+  },
+   {
     name: "Redbox Movies",
     type: "hls",
     manifestUri: "https://7732c5436342497882363a8cd14ceff4.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/Plex_NewMovies/playlist.m3u8"
@@ -347,6 +363,11 @@ const builtInChannels = [
     name: "KOCOWA",
     type: "hls",
     manifestUri: "https://dbrb49pjoymg4.cloudfront.net/10001/99991348/hls/master.m3u8?includeAssetTags=true&ads.xumo_channelId=99991348&ads._fw_ifa_type=dpid&ads._fw_did=413d7e29-b63e-b34e-b143-bf0efe32f394&ads.amznappId=[AMZN_APP_ID]&ads.lat=[LAT]&ads.lon=[LON]&ads.os=[OS]&ads.osv=[OS_VERSION]&ads.asnw=&ads.caid=Kocowa&ads.csid=xumo_desktopweb_Kocowa_ssai&ads._fw_is_lat=0&ads._fw_us_privacy=1YNN&ads._fw_coppa=0&ads.genre=Action%2CAdventure%2CComedy%2CCrime%2CDrama%2CFamily%2CFantasy%2CHorror%2CMystery%2CRomance%2CSci-Fi%2CThriller%2CWar%2CWestern%2CSuperhero&ads._fw_content_category=IAB1-7&ads._fw_content_language=undefined&ads._fw_content_genre=International&ads._fw_content_rating=TV-14&ads.xumo_contentId=285&ads.xumo_contentName=Kocowa&ads.xumo_providerId=285&ads.xumo_providerName=Kocowa&ads._fw_deviceMake=&ads._fw_device_model=&ads.channelId=99991348&ads.xumo_platform=desktopweb&ads.site_id=26840&ads.appName=xumo&ads.appVersion=2.18.0&ads._fw_app_bundle=&ads._fw_app_store_url=&ads.site_name=XumoPlay&ads.site_page=https%253A%252F%252Fplay.xumo.com"
+  },
+   {
+    name: "RAKUTEN VIKI",
+    type: "hls",
+    manifestUri: "https://newidco-rakutenviki-2-eu.xiaomi.wurl.tv/4300.m3u8"
   },
    {
     name: "Samsung Movies",
@@ -378,6 +399,11 @@ const builtInChannels = [
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/cg_axn_sd.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "fd5d928f5d974ca4983f6e9295dfe410":"3aaa001ddc142fedbb9d5557be43792f" } }
+  },
+  {
+    name: "History2",
+    type: "hls",
+    manifestUri: "https://fast-channels-prod.akamaized.net/out/v1/6fbb677b6ffc4a4fac47a8fd85c8b333/live_1.m3u8"
   },
   {
     name: "MHz",
@@ -459,6 +485,11 @@ const builtInChannels = [
     manifestUri:"https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_cnnhd.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "900c43f0e02742dd854148b7a75abbec":"da315cca7f2902b4de23199718ed7e90" } }
   },
+  {
+    name: "CBS News",
+    type: "hls",
+    manifestUri: "https://cbsn-us.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master_21.m3u8"
+  },
   { 
     name:"One PH", 
     type:"dash", 
@@ -505,6 +536,11 @@ const builtInChannels = [
     type:"dash", 
     manifestUri:"https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_bbcearth_hd1.mpd", 
     drm:{ type:"org.w3.clearkey", keyIds:{ "34ce95b60c424e169619816c5181aded":"0e2a2117d705613542618f58bf26fc8e" } }
+  },
+  {
+    name: "CHANNEL NEWS ASIA",
+    type: "hls",
+    manifestUri: "https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8"
   },
   { 
     name:"Discovery Channel SD", 
@@ -628,6 +664,11 @@ const builtInChannels = [
       keyIds:{ "4ab9645a2a0a47edbd65e8479c2b9669":"8cb209f1828431ce9b50b593d1f44079" } 
     } 
   },
+   {
+    name: "Always Funny Videos",
+    type: "hls",
+    manifestUri: "https://linear-12.frequency.stream/dist/glewedtv/12/hls/master/playlist_640x360.m3u8"
+  },
   { 
     name:"A2Z", 
     type:"dash", 
@@ -693,6 +734,11 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00627-banijaygroup-masterchefuk-lgca/playlist.m3u8?ads.deviceid=[DEVICE_ID]&ads.ifa=[IFA]&ads.ifatype=[IFA_TYPE]&ads.lat=[LMT]&ads.donotsell=[DNS]&ads.ua=[UA]&ads.ip=[IP]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.country=[COUNTRY]&ads.usprivacy=[US_PRIVACY]&ads.appstoreurl=[APP_STOREURL]&ads.bundleid=[APP_BUNDLE]&ads.appname=[APP_NAME]&ads.appversion=[APP_VERSION]&ads.devicetype=[DEVICE_TYPE]&ads.devicemake=[DEVICE_MAKE]&ads.devicemodel=[DEVICE_MODEL]&ads.coppa=0&ads.targetad=[TARGETAD_ALLOWED]"
   },
+  {
+    name: "Dont Tell The Bride",
+    type: "hls",
+    manifestUri: "https://lds-donttellbride-rakuten.amagi.tv/360p-cc/index.m3u8"
+  },
   { 
     name: "Declassified",
     type: "hls",
@@ -708,6 +754,36 @@ const builtInChannels = [
     type: "hls",
     manifestUri: "https://d4whmvwm0rdvi.cloudfront.net/10007/99992212/hls/master.m3u8?ads.xumo_channelId=99992212&ads.asnw=169843&ads.afid=137704898&ads.sfid=16373024&ads.csid=lgchannels_us_nbcnewsnow_ssai_cro&ads._fw_is_lat=[LMT]&ads._fw_us_privacy=[US_PRIVACY]&ads._fw_coppa=0&ads._fw_did=[IFA]&ads._fw_vcid2=512116:[IFA]&ads._fw_app_bundle=[APP_BUNDLE]&ads._fw_app_store_url=[APP_STOREURL]&ads._fw_content_category=IAB12&ads._fw_content_genre=News&ads._fw_content_language=en&ads._fw_content_rating=&ads._fw_deviceMake=[DEVICE_MAKE]&ads._fw_device_model=[DEVICE_MODEL]&ads._fw_deviceType=3-Connected_TV&ads.appVersion=[APP_VERSION]&ads.appName=lgchannels&ads.xumo_contentId=1828&ads.xumo_contentName=NBCNewsNOW&ads.xumo_providerId=1828&ads.xumo_providerName=NBCNewsNOW&ads.channelId=99992212&ads._fw_ifa_type=dpid&ads.fck=[FCK]&ads.viewsize=[VIEWSIZE]&ads.givn=[NONCE]"
   },
+   {
+    name: "THE DESIGN NETWORK",
+    type: "hls",
+    manifestUri: "https://amg00441-amg00441c1-rakuten-us-6050.playouts.now.amagi.tv/playlist/amg00441-thedesignnetworkllcfast-thedesignnetwork-rakutenus/cb7f3e1e7b736f8a9ecf3e6cd1f041f2d1526381573add353ba35e9472c11e538db4f1c9ea19bb4a03e24094385631004262d519ce64669e802ef716776c69108a99b265d992026eeb86092e21a3321855e71e6490650f77eeec18238c29fa2c5644a65a38167aa6953dd00a4ed5dc53d02a39fcf88e3a66644a2cc71f02b8f541a2fce84345c66cbfb10c2bc47914a5db5dccd71ba583d2498a15d37ff81398c4a696db19818e8c62a801b27951087b79d4852bcb980fe4d8986b6ccc251a5c74208e7b41f9345eb66f0137c8f7c2b36cef03c78720921258d162b97cf4fb0ef6c873c3c05da9acc1b32a85b7a3b63d4c26aeecac8bb9425b428e50c19bbf232ce39a397d53db62980f2a3699f1ca5ee2a971c7e673d3e628754cb134054b8fbad2a290f44c0ba1cb06aaa61d082542170b87128f9b63d225dc4265af792e71425ea49659c5c98c10602207b18950d01c0caa9ba5b79f5f6b8430401adf69d70d51378c2c3a28ac6dd88a2c608c110f871e34ef1760d315b2eb7ab5eff0cd32169992874ef664eaf52dd7f509a6247c7a0aa1fd215a0a1d2e89a0364360379305d7d2cce065004fb9a49ab093054a72537d650585e6e86788ce91796f71ef676631245e47ec47bc0ff80f460722cc64a38f01668a0b246dabe70854546899dfa2c3e0f2cf57be6bdcdff75a7e6b0b83dcba9ca5cbb59320a16849ea60115da044d727866c03/102/1280x720_3343260/index.m3u8"
+  },
+   {
+    name: "FXX MOVIE",
+    type: "hls",
+    manifestUri: "https://e4.thetvapp.to/hls/FXXEast/tracks-v1a1/mono.m3u8"
+  },
+   {
+    name: "Crime 360",
+    type: "hls",
+    manifestUri: "https://c664c25d.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctYXVfQ3JpbWUzNjBfSExT/playlist.m3u8"
+  },
+   {
+    name: "GameOn",
+    type: "hls",
+    manifestUri: "https://amg15905-k20-amg15905c5-lg-au-6752.playouts.now.amagi.tv/playlist/amg15905-mediacan-gameon-lgau/playlist.m3u8?ads.deviceid=[DEVICE_ID]&ads.ifa=[IFA]&ads.ifatype=[IFA_TYPE]&ads.lat=[LMT]&ads.donotsell=[DNS]&ads.ua=[UA]&ads.ip=[IP]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.country=[COUNTRY]&ads.usprivacy=[US_PRIVACY]&ads.appstoreurl=[APP_STOREURL]&ads.bundleid=[APP_BUNDLE]&ads.appname=[APP_NAME]&ads.appversion=[APP_VERSION]&ads.devicetype=[DEVICE_TYPE]&ads.devicemake=[DEVICE_MAKE]&ads.devicemodel=[DEVICE_MODEL]&ads.targetad=[TARGETAD_ALLOWED]&fck=[FCK]&viewsize=[VIEWSIZE]&givn=[NONCE]"
+  },
+   {
+    name: "Fail Army",
+    type: "hls",
+    manifestUri: "https://b5b2d4f7.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctYXVfRmFpbEFybXlfSExT/playlist.m3u8"
+  },
+  {
+    name: "Robot Wars by Mech+",
+    type: "hls",
+    manifestUri: "https://756db222c2d642f3beda9099815b4cf4.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/LG-au_MechPlus/playlist.m3u8"
+  },
   { 
     name: "Universal Action",
     type: "hls",
@@ -717,6 +793,31 @@ const builtInChannels = [
     name: "Movie Favorites by Lifetime",
     type: "hls",
     manifestUri: "https://33ce6dcb.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEdfSG9saWRheU1vdmllRmF2b3JpdGVzYnlMaWZldGltZV9ITFM/playlist.m3u8"
+  },
+   {
+    name: "Fork & Flight",
+    type: "hls",
+    manifestUri: "https://amg00346-vizioono-forkandfligt-xumo-us.amagi.tv/240p/index.m3u8"
+  },
+  {
+    name: "Tastemade",
+    type: "hls",
+    manifestUri: "https://amg00047-tastemade-tmintleng-xiaomi-u5r78.amagi.tv/playlist/amg00047-tastemade-tmintleng-xiaomi/cb563b1965746d909fcf2167d6f462ffa65928d80b6c852a6ab454876da64607d1e3b680fd358b785d9f01de6a1a0a080361cf12ce3407c3c76ad91174204213cfcac9229d86170ab5c60c2c3aab016635837209c0790a79dca93d0d8636ba304530e01b615b37c2ec5aa46852db80148b6f4adafb8c2360625f5c98435ee3b24aa4f9e00913de39f2ac141b922e58e68314c9c915b886d0469f128377f241ce90f58eda12e0eeab4a91f869f46822405abbc217a6c754a2df9e2912957f2f42115894d2f99c6b09f68bc7c19a85ad9a70ed1cde8c5fe12a57e944f0e7e541ebd5c8604d3e6780d49077251cc2911b842b4a85f0b285eb307c9169f5a6e6d349b1f89c1b5548d364d42e2a77c5b39b54ccf41c98b22c92a729330c80c015d5cde9c3d8b9831cc87e8adfa2cc74026f73140e836aa79846d23d922dfb995d720a0d0c86b261e9aa951e3c6b4483c079d11010b692cba0d71c34c765540bbb39970b4b3c82642c4fe42bf8883523dc755dcb666b892d5fea75f5b628fab0c8a5576bc7b9e976bf3ebffb5aa8b568cf4a335605bff7562f66446fdfe3634d7d39f44cead7c5f6644b67c8f2def5d45c280d5b420414ea0286b23317654ff87c4921d76cb2e48d83139bc1857408/56/768x432_1478400/index.m3u8"
+  },
+  {
+    name: "Tastemade Home",
+    type: "hls",
+    manifestUri: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00047-tastemade-tastemadehome24i-ono/fac8394e-c5b7-4e30-b136-610465f73aae/2.m3u8"
+  },
+  {
+    name: "Tastemade Travel",
+    type: "hls",
+    manifestUri: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00047-tastemade-tastemadetravelenglish24i-ono/bb5c9573-a47f-45fc-aa64-81c8637394de/2.m3u8"
+  },
+   {
+    name: "ROMANZA",
+    type: "hls",
+    manifestUri: "https://livecdn.premiumfree.tv/afxpstr/Romanza/tracks-v1a1/mono.m3u8"
   }
 ];
 // ==========================
@@ -885,6 +986,7 @@ function initPlayer(){
 
   loadPlaylist("https://raw.githubusercontent.com/juztnobadi24/mychannels/main/juztchannels.m3u");
 }
+
 
 
 
